@@ -1,5 +1,6 @@
 body {
     background-color: #2b2c2c !important;
+    padding: 0 10px 0;
 }
 
 p{
@@ -566,6 +567,9 @@ input.search-form_input {
         height: 600px;
         /* Đặt chiều cao mong muốn cho màn hình lớn hơn */
     }
+}
+.col-sm-3{
+    padding-bottom: 22px;
 }
 
 .col-sm-12.banner2{
