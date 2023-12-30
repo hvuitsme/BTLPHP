@@ -216,7 +216,7 @@ Thêm hiệu ứng con mắt
     border: 0;
 }
 
-a.moto-widget-menu-link.moto-widget-menu-link-level-1.moto-link {
+a.menu-link.menu-link-level-1.moto-link {
     text-decoration: none;
 }
 
@@ -249,7 +249,7 @@ ol {
     list-style: none;
 }
 
-ul.moto-widget-menu-list.moto-widget-menu-list_horizontal {
+ul.menu-list.menu-list_horizontal {
     display: flex;
     justify-content: center;
     padding: 0;
@@ -259,28 +259,14 @@ li.moto-widget-menu-item {
     padding: 10px;
 }
 
-ul.moto-widget-social-links-extended__list {
+ul.social-links-extended__list {
     display: flex;
     justify-content: center;
     padding: 0;
 }
 
-li.moto-widget-social-links-extended__item {
+li.social-links-extended__item {
     padding: 10px;
-}
-
-.moto-widget-store_cart_and_profile-container {
-    list-style: none;
-    /* Xóa dấu hiệu danh sách mặc định */
-    padding: 0;
-    /* Xóa khoảng trắng xung quanh danh sách */
-    display: flex;
-    /* Hiển thị các phần tử con ngang hàng */
-}
-
-.moto-widget-store_cart_and_profile-item {
-    margin-right: 10px;
-    /* Khoảng cách giữa các phần tử li (tuỳ chọn) */
 }
 
 i.fa-brands.payment {
@@ -288,7 +274,7 @@ i.fa-brands.payment {
     padding-right: 3px;
 }
 
-.moto-widget-menu-toggle-btn {
+.menu-toggle-btn {
     display: none;
 }
 
@@ -302,21 +288,21 @@ input.search-form_input {
 }
 
 /* Ẩn danh sách con ban đầu */
-.moto-widget-menu-item-has-submenu>.moto-widget-menu-sublist {
+.menu-item-has-submenu>.menu-sublist {
     display: none;
 }
 
 /* Hiển thị danh sách con khi hover */
-.moto-widget-menu-item-has-submenu:hover>.moto-widget-menu-sublist {
+.menu-item-has-submenu:hover>.menu-sublist {
     display: block;
 }
 
 /* Thiết lập kiểu dáng cho danh sách con */
-.moto-widget-menu-sublist {
+.menu-sublist {
     position: absolute;
-    background-color: #fff;
+    background-color: #000000;
     /* Màu nền của dropdown */
-    border: 1px solid #ccc;
+    border: 1px solid #000000;
     /* Viền của dropdown */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     /* Đổ bóng cho dropdown */
