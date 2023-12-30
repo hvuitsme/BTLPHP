@@ -4,10 +4,11 @@ body {
 }
 
 hr.custom-hr {
-  width: 10%;
+  width: 5%;
   height: 5px;
   background-color: #dc3545;
   border: none;
+  margin-top: 0;
   opacity: 100%;
 }
 
