@@ -2,6 +2,10 @@ body {
     background-color: #2b2c2c !important;
 }
 
+img.logo-link {
+    filter: brightness(0) invert(1);
+  }
+
 p{
     color: white;
 }
