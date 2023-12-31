@@ -4,9 +4,9 @@ body {
 
 img.logo-link {
     filter: brightness(0) invert(1);
-  }
+}
 
-p{
+p {
     color: white;
 }
 
@@ -142,11 +142,13 @@ Thêm hiệu ứng con mắt
 
 .card.sp {
     position: relative;
-    transition: background-color 0.3s ease; /* Thêm hiệu ứng chuyển động cho background-color */
+    transition: background-color 0.3s ease;
+    /* Thêm hiệu ứng chuyển động cho background-color */
 }
 
 .card.sp:hover {
-    background-color: rgba(255, 255, 255, 0.8); /* Nền trắng mờ khi di chuột vào */
+    background-color: rgba(255, 255, 255, 0.8);
+    /* Nền trắng mờ khi di chuột vào */
 }
 
 .eye-link {
@@ -156,12 +158,15 @@ Thêm hiệu ứng con mắt
     transform: translate(-50%, -50%);
     text-decoration: none;
     color: inherit;
-    opacity: 0; /* Ẩn icon mắt khi không hover */
-    transition: opacity 0.3s ease-in-out; /* Thêm hiệu ứng chuyển động cho opacity */
+    opacity: 0;
+    /* Ẩn icon mắt khi không hover */
+    transition: opacity 0.3s ease-in-out;
+    /* Thêm hiệu ứng chuyển động cho opacity */
 }
 
 .card.sp:hover .eye-link {
-    opacity: 1; /* Hiển thị icon mắt khi hover */
+    opacity: 1;
+    /* Hiển thị icon mắt khi hover */
 }
 
 .eye-link:hover {
@@ -178,7 +183,8 @@ Thêm hiệu ứng con mắt
     }
 } */
 .fa-eye {
-    animation: eyeBlink 1.5s infinite; /* Sử dụng hiệu ứng */
+    animation: eyeBlink 1.5s infinite;
+    /* Sử dụng hiệu ứng */
 }
 
 
@@ -311,24 +317,40 @@ input.search-form_input {
     /* Đổ bóng cho dropdown */
 }
 
-.text-banner.row-banner{
+.menu-container {
+    color: #e6e5db;
+    /* Màu chữ cho menu */
+}
+
+.menu-sublist {
+    display: none;
+    position: absolute;
+    background-color: #e6e5dbba;
+    /* Màu nền khi hover */
+    padding: 10px;
+}
+
+.menu-item-has-submenu:hover .menu-sublist {
+    display: block;
+    border: 0;
+}
+
+
+.text-banner.row-banner {
     padding-top: 200px;
     padding-bottom: 200px;
 }
 
 @media (max-width: 479px) {
-    .text-banner.row-banner{
-        
-    }
+    .text-banner.row-banner {}
 }
 
 @media (max-width: 767px) {
-    .text-banner.row-banner{
-        
-    }
+    .text-banner.row-banner {}
 }
+
 @media (max-width: 1039px) {
-    .text-banner.row-banner{
+    .text-banner.row-banner {
         padding-top: 170px;
         padding-bottom: 170px;
     }
@@ -557,11 +579,12 @@ input.search-form_input {
         /* Đặt chiều cao mong muốn cho màn hình lớn hơn */
     }
 }
-.col-sm-3{
+
+.col-sm-3 {
     padding-bottom: 22px;
 }
 
-.col-sm-12.banner2{
+.col-sm-12.banner2 {
     padding-top: 285px;
     padding-bottom: 285px;
 }
