@@ -3,6 +3,19 @@ body {
   color: white !important;
 }
 
+p{
+  line-height: 28px;
+}
+
+span{
+  color: white;
+}
+
+/* Hiệu ứng hover */
+span:hover {
+  color: #dc3545;
+}
+
 hr.custom-hr {
   width: 5%;
   height: 5px;
@@ -15,12 +28,15 @@ hr.custom-hr {
 a{
   text-decoration: none !important;
   padding: 0;
+  height: 28px;
+  padding-top: 6px;
+  padding-bottom: 6px;
 }
 
 /* tắt dấu chấm đầu thẻ li */
-ul.list-unstyled {
+/* ul.list-unstyled {
   list-style-type: none;
-}
+} */
 
 li.li-cate {
   padding-top: 5px;
@@ -148,4 +164,9 @@ span.shop-items{
   margin: 0 !important;
   /* Đặt padding của thẻ p là 0 */
   font-size: 30px;
+}
+
+/* Màu cho thẻ span của trang hiện tại */
+.current-page {
+  color: #dc3545;
 }
