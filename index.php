@@ -36,7 +36,9 @@
         <div class="row w-100">
           <div class="col-lg-6 align-self-center">
             <p class="moto-text_system_2 mb-0">
-              <span class="d-flex justify-content-center align-items-center"><i class="fa-solid fa-phone fa-sm"></i></span>&nbsp;&nbsp;<a href="tel:1234567890">+3(800) 2345-6789</a>&nbsp; 7 Days a week from 9:00 am to 7:00 pm
+              <span class="d-flex justify-content-center align-items-center"><i
+                  class="fa-solid fa-phone fa-sm"></i></span>&nbsp;&nbsp;<a href="tel:1234567890">+3(800)
+                2345-6789</a>&nbsp; 7 Days a week from 9:00 am to 7:00 pm
             </p>
           </div>
           <div class="col-lg-6">
@@ -46,7 +48,8 @@
                   <div store-search-widget="" bis_skin_checked="1">
                     <form action="" method="GET" accept-charset="utf-8" class="search-form form-inline my-2 my-lg-0">
                       <label class="search-form_label">
-                        <input type="text" name="keyword" autocomplete="off" value="" class="search-form_input form-control" />
+                        <input type="text" name="keyword" autocomplete="off" value=""
+                          class="search-form_input form-control" />
                         <i class="fa-solid fa-magnifying-glass fa-sm search-icon"></i>
                       </label>
                       <span class="search-form_submit fa-search search-submit-icon"></span>
@@ -76,19 +79,19 @@
         </div>
       </div>
     </div>
-    
+
     <div class="banner-img banner1">
       <div class="container-fluid" bis_skin_checked="1">
         <div class="row" data-container="container" bis_skin_checked="1">
-          <div class="col-sm-12 vh-100" >
+          <div class="col-sm-12 vh-100">
             <div data-widget-id="wid_1524569774_ikd6tjku4" class="">
               <div class="" style="height: 30px"></div>
             </div>
             <div class="">
               <div class="container" bis_skin_checked="1">
                 <div class="row" data-container="" bis_skin_checked="1">
-                  <div class="col-sm-4 d-flex justify-content-start" >
-                    <div class="col-xs-12 d-flex align-items-center justify-content-center" >
+                  <div class="col-sm-4 d-flex justify-content-start">
+                    <div class="col-xs-12 d-flex align-items-center justify-content-center">
                       <div class="" data-widget="image">
                         <a href="" data-action="home_page" class="image-link moto-link">
                           <img class="logo-link"
@@ -114,7 +117,8 @@
                       <a href="#" class="menu-toggle-btn"><i class="menu-toggle-btn-icon fa fa-bars"></i></a>
                       <ul class="menu-list menu-list_horizontal header m-0">
                         <li class="moto-widget-menu-item">
-                          <a href="#" data-action="home_page" class="menu-link menu-link-level-1 menu-link-active moto-link">HOME</a>
+                          <a href="#" data-action="home_page"
+                            class="menu-link menu-link-level-1 menu-link-active moto-link">HOME</a>
                         </li>
                         <li class="moto-widget-menu-item">
                           <a href="#" data-action="page" class="menu-link menu-link-level-1 moto-link">ABOUT US</a>
@@ -148,7 +152,7 @@
                         </li>
                       </ul>
                     </div>
-                  </div>                  
+                  </div>
                 </div>
               </div>
             </div>
@@ -273,9 +277,66 @@
         <img data-src="" src="https://demo.try-builder.commt-content/uploads/2018/04/mt-1422_header_logo1.png" class=""
           data-id="1120" title="" alt="" />
       </h1>
-      <!-- phan nay -->
+
       <h1 class="text-center text-white mb-4">OUR PRODUCTS</h1>
-      <div class="col-sm-3">
+<!-- chỗ đã thay đổi -->
+      <?php
+      // Kết nối đến cơ sở dữ liệu
+      $servername = "localhost";
+      $username = "root";
+      $password = "";
+      $dbname = "web";
+
+      $conn = new mysqli($servername, $username, $password, $dbname);
+
+      // Kiểm tra kết nối
+      if ($conn->connect_error) {
+        die("Kết nối không thành công: " . $conn->connect_error);
+      }
+      ?>
+
+
+      <?php
+      $sql = "SELECT * FROM image_sanpham";
+      $result = $conn->query($sql);
+
+      if ($result->num_rows > 0) {
+        // Duyệt qua từng dòng dữ liệu
+        while ($row = $result->fetch_assoc()) {
+          ?>
+          <div class="col-sm-3">
+            <div class="card sp" style="width: 100%" onmouseover="addHoverEffect(this)" onmouseout="removeHoverEffect(this)"
+              onclick="redirectToAnotherPage()">
+              <img class="h-100" src="data:image/jpeg;base64,<?= base64_encode($row['image_sp']) ?>" alt="" />
+              <a href="#" class="eye-link">
+                <i class="fa-regular fa-eye"></i>
+              </a>
+            </div>
+
+            <div class="d-flex justify-content-center pt-3">
+              <p class="m-0">
+                <?= $row['name_sp'] ?>
+              </p>
+            </div>
+
+            <div class="d-flex justify-content-center pt-3">
+              <button type="button" class="btn btn-danger">
+                Thêm vào giỏ hàng
+              </button>
+            </div>
+          </div>
+          <?php
+        }
+      } else {
+        echo "Không có dữ liệu";
+      }
+
+      // Đóng kết nối
+      $conn->close();
+      ?>
+<!-- hết đoạn thay đổi -->
+
+      <!-- <div class="col-sm-3">
         <div class="card sp" style="width: 100%" onmouseover="addHoverEffect(this)" onmouseout="removeHoverEffect(this)"
           onclick="redirectToAnotherPage()">
           <img class="h-100"
@@ -289,13 +350,13 @@
         <div class="d-flex justify-content-center pt-3">
           <p class="m-0">Đầm hồng cá tính</p>
         </div>
-        <!-- phan nay -->
+        
         <div class="d-flex justify-content-center pt-3">
           <button type="button" class="btn btn-danger">
             Thêm vào giỏ hàng
           </button>
         </div>
-      </div>
+      </div> -->
     </div>
   </div>
 
@@ -333,7 +394,7 @@
   </div>
 
   <footer id="section-footer" class="footer moto-section moto-sticky__bootstrapped">
-    <div class="" >
+    <div class="">
       <div class="container-fluid" bis_skin_checked="1">
         <div class="row" data-container="container" bis_skin_checked="1">
           <div class="col-sm-12" data-widget="row.column" data-container="container" data-spacing="aaaa"
@@ -346,20 +407,20 @@
                     data-bg-position="left top" bis_skin_checked="1"></div>
                   <div class="col-sm-4" data-widget="row.column" data-container="container" data-spacing="aaaa"
                     data-bg-position="left top" bis_skin_checked="1">
-                    <div class="" data-grid-type="xs" data-widget="row" data-spacing="aaaa" 
-                      data-bg-position="left top" bis_skin_checked="1">
+                    <div class="" data-grid-type="xs" data-widget="row" data-spacing="aaaa" data-bg-position="left top"
+                      bis_skin_checked="1">
                       <div class="container-fluid" bis_skin_checked="1">
                         <div class="row" data-container="container" bis_skin_checked="1">
-                          <div class="col-xs-2" data-widget="row.column" data-container="container"
-                            data-spacing="aaaa" data-bg-position="left top" bis_skin_checked="1"></div>
+                          <div class="col-xs-2" data-widget="row.column" data-container="container" data-spacing="aaaa"
+                            data-bg-position="left top" bis_skin_checked="1"></div>
                           <div class="col-xs-9 py-3 d-flex justify-content-center" data-widget="row.column"
                             data-container="container" data-spacing="aaaa" data-bg-position="left top"
                             bis_skin_checked="1">
-                            <div class="" data-grid-type="xs" data-widget="row" data-spacing="sasa" 
+                            <div class="" data-grid-type="xs" data-widget="row" data-spacing="sasa"
                               data-bg-position="left top" data-draggable-disabled="" bis_skin_checked="1">
                               <div class="container-fluid" bis_skin_checked="1">
                                 <div class="row align-items-center" data-container="container" bis_skin_checked="1">
-                                  <div class="col-xs-12 d-flex align-items-center justify-content-center" 
+                                  <div class="col-xs-12 d-flex align-items-center justify-content-center"
                                     data-widget="row.column" data-container="container" data-spacing="aaaa"
                                     data-bg-position="left top" bis_skin_checked="1">
                                     <div class="" data-widget="image" bis_skin_checked="1">
@@ -387,8 +448,8 @@
                               </div>
                             </div>
                           </div>
-                          <div class="col-xs-1" data-widget="row.column" data-container="container"
-                            data-spacing="aaaa" data-bg-position="left top" bis_skin_checked="1"></div>
+                          <div class="col-xs-1" data-widget="row.column" data-container="container" data-spacing="aaaa"
+                            data-bg-position="left top" bis_skin_checked="1"></div>
                         </div>
                       </div>
                     </div>
@@ -403,12 +464,11 @@
               <a href="#" class="menu-toggle-btn"><i class=" fa fa-bars"></i></a>
               <ul class="menu-list menu-list_horizontal footer">
                 <li class="moto-widget-menu-item">
-                  <a href="index.php" data-action="home_page" class="menu-link menu-link-level-1 menu-link-active moto-link"
-                    bis_skin_checked="1">HOME</a>
+                  <a href="index.php" data-action="home_page"
+                    class="menu-link menu-link-level-1 menu-link-active moto-link" bis_skin_checked="1">HOME</a>
                 </li>
                 <li class="moto-widget-menu-item">
-                  <a href="" data-action="page" class="menu-link menu-link-level-1 moto-link"
-                    bis_skin_checked="1">ABOUT
+                  <a href="" data-action="page" class="menu-link menu-link-level-1 moto-link" bis_skin_checked="1">ABOUT
                     US</a>
                 </li>
                 <li class="moto-widget-menu-item">
