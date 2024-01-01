@@ -34,7 +34,7 @@
     <div class="container py-4">
       <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="./index.html">Home</a></li>
+          <li class="breadcrumb-item"><a href="./index.php">Home</a></li>
           <li class="breadcrumb-item active" aria-current="page">Library</li>
         </ol>
       </nav>
@@ -49,10 +49,10 @@
         <div class="row">
           <!-- <h4 class="mb-4">Danh Mục</h4> -->
           <p class="mb-4">Danh mục</p>
-          <a href="/dress.html"><span>VÁY CƯỚI</span></a>
-          <a href="/accessories.html"><span>PHỤ KIỆN</span></a>
-          <a href="/collections.html"><span>BỘ SƯU TẬP ĐỘC QUYỀN</span></a>
-          <a href="/shop.html"><span>SHOP</span></a>
+          <a href="dress.php"><span>VÁY CƯỚI</span></a>
+          <a href="accessories.php"><span>PHỤ KIỆN</span></a>
+          <a href="collections.php"><span>BỘ SƯU TẬP ĐỘC QUYỀN</span></a>
+          <a href="shop.php"><span>SHOP</span></a>
         </div>
 
         <div class="row">
@@ -83,7 +83,7 @@
             <div class="card sp" style="width: 100%" onmouseover="addHoverEffect(this)"
               onmouseout="removeHoverEffect(this)" onclick="redirectToAnotherPage()">
               <img class="h-100"
-                src="https://lavitta.vn/cdn/shop/files/z5009401304552_6e7b6b911bc5b000603b56ca5b04a874_600x.jpg?v=1703524364"
+                src="https://lavitta.vn/cdn/shop/files/z5009401802593_ac3db59bda6187bff17af1b8bbcfbbc5_600x.jpg?v=1703525097"
                 alt="" />
               <a href="#" class="eye-link">
                 <i class="fa-regular fa-eye"></i>

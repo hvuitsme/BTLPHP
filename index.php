@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="./style.css" />
+  <link rel="stylesheet" href="style.css" />
   <title>webvaycuoi</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -120,21 +120,21 @@
                           <a href="#" data-action="page" class="menu-link menu-link-level-1 moto-link">ABOUT US</a>
                         </li>
                         <li class="moto-widget-menu-item menu-item-has-submenu">
-                          <a href="/shop.html" data-action="store.category"
+                          <a href="shop.php" data-action="store.category"
                             class="menu-link menu-link-level-1 menu-link-submenu moto-link">SHOP
                             <i class="fa-solid fa-angle-down"></i></a>
                           <ul class="menu-sublist">
                             <li class="moto-widget-menu-item">
-                              <a href="/dress.html" data-action="store.category"
+                              <a href="dress.php" data-action="store.category"
                                 class="menu-link menu-link-level-2 moto-link">WEDDING DRESS</a>
                             </li>
                             <li class="moto-widget-menu-item">
-                              <a href="/accessories.html" data-action="store.category"
+                              <a href="accessories.php" data-action="store.category"
                                 class="menu-link menu-link-level-2 moto-link">WEDDING
                                 ACCESSORIES</a>
                             </li>
                             <li class="moto-widget-menu-item">
-                              <a href="/collections.html" data-action="store.category"
+                              <a href="collections.php" data-action="store.category"
                                 class="menu-link menu-link-level-2 moto-link">EXCLUSIVE
                                 COLLECTION</a>
                             </li>
@@ -187,7 +187,7 @@
     <div class="container type-categories">
       <div class="row">
         <div class="col-4 p-4">
-          <a href="/dress.html" class="card-link">
+          <a href="/dress.php" class="card-link">
             <div class="card" style="width: 100%">
               <img
                 src="https://lavitta.vn/cdn/shop/files/z5009401811761_77bf56a6cf6eba0dbfd6a2fcc66288d7_600x.jpg?v=1703525193"
@@ -203,7 +203,7 @@
         </div>
 
         <div class="col-4 p-4">
-          <a href="/accessories.html" class="card-link">
+          <a href="/accessories.php" class="card-link">
             <div class="card" style="width: 100%">
               <img
                 src="https://lavitta.vn/cdn/shop/files/z5009401802593_ac3db59bda6187bff17af1b8bbcfbbc5_600x.jpg?v=1703525097"
@@ -219,7 +219,7 @@
         </div>
 
         <div class="col-4 p-4">
-          <a href="/collections.html" class="card-link">
+          <a href="/collections.php" class="card-link">
             <div class="card" style="width: 100%">
               <img
                 src="https://lavitta.vn/cdn/shop/files/z5009401283292_9fe878edd75c243caa8d1b1ed6927490_600x.jpg?v=1703524257"
@@ -403,24 +403,24 @@
               <a href="#" class="menu-toggle-btn"><i class=" fa fa-bars"></i></a>
               <ul class="menu-list menu-list_horizontal footer">
                 <li class="moto-widget-menu-item">
-                  <a href="" data-action="home_page" class="menu-link menu-link-level-1 menu-link-active moto-link"
+                  <a href="index.php" data-action="home_page" class="menu-link menu-link-level-1 menu-link-active moto-link"
                     bis_skin_checked="1">HOME</a>
                 </li>
                 <li class="moto-widget-menu-item">
-                  <a href="about-us/" data-action="page" class="menu-link menu-link-level-1 moto-link"
+                  <a href="" data-action="page" class="menu-link menu-link-level-1 moto-link"
                     bis_skin_checked="1">ABOUT
                     US</a>
                 </li>
                 <li class="moto-widget-menu-item">
-                  <a href="blog/" data-action="blog.index" class="menu-link menu-link-level-1 moto-link"
+                  <a href="" data-action="blog.index" class="menu-link menu-link-level-1 moto-link"
                     bis_skin_checked="1">BLOG</a>
                 </li>
                 <li class="moto-widget-menu-item">
-                  <a href="./shop.html" data-action="store.category" class="menu-link menu-link-level-1 moto-link"
+                  <a href="shop.php" data-action="store.category" class="menu-link menu-link-level-1 moto-link"
                     bis_skin_checked="1">SHOP</a>
                 </li>
                 <li class="moto-widget-menu-item">
-                  <a href="contacts/" data-action="page" class="menu-link menu-link-level-1 moto-link"
+                  <a href="" data-action="page" class="menu-link menu-link-level-1 moto-link"
                     bis_skin_checked="1">CONTACTS</a>
                 </li>
               </ul>

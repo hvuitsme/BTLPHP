@@ -34,7 +34,7 @@
     <div class="container py-4">
       <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="./index.html">Home</a></li>
+          <li class="breadcrumb-item"><a href="./index.php">Home</a></li>
           <li class="breadcrumb-item active" aria-current="page">Library</li>
         </ol>
       </nav>
@@ -49,10 +49,10 @@
         <div class="row">
           <!-- <h4 class="mb-4">Danh Mục</h4> -->
           <p class="mb-4">Danh mục</p>
-          <a href="/dress.html"><span>VÁY CƯỚI</span></a>
-          <a href="/accessories.html"><span>PHỤ KIỆN</span></a>
-          <a href="/collections.html"><span>BỘ SƯU TẬP ĐỘC QUYỀN</span></a>
-          <a href="/shop.html"><span>SHOP</span></a>
+          <a href="dress.php"><span>VÁY CƯỚI</span></a>
+          <a href="accessories.php"><span>PHỤ KIỆN</span></a>
+          <a href="collections.php"><span>BỘ SƯU TẬP ĐỘC QUYỀN</span></a>
+          <a href="shop.php"><span>SHOP</span></a>
         </div>
 
         <div class="row">
