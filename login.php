@@ -86,7 +86,9 @@
                     Swal.fire({
                         title: "Đăng nhập thành công!",
                         icon: "success",
-                        confirmButtonText: "OK"
+                        // confirmButtonText: "OK"
+                        showConfirmButton: false,
+                        timer: 2000 // Ẩn sau 1 giây
                     }).then(function() {
                         window.location.href = "index.php"; // Sử dụng đường dẫn tuyệt đối
                     });
@@ -94,11 +96,31 @@
                 exit();
             } else {
                 // Sai mật khẩu
-                echo json_encode(["success" => false, "message" => "Sai mật khẩu"]);
+                echo '<script type="text/javascript">
+                        Swal.fire({
+                            title: "Sai mật khẩu!",
+                            icon: "error",
+                            text: "Vui lòng kiểm tra lại mật khẩu.",
+                            showConfirmButton: false,
+                            timer: 2000 // Ẩn sau 1 giây
+                        }).then(function() {
+                            window.location.href = "form.php"; // Sử dụng đường dẫn tuyệt đối
+                        });
+                    </script>';
             }
         } else {
             // Tên đăng nhập không tồn tại
-            echo json_encode(["success" => false, "message" => "Tên đăng nhập không tồn tại"]);
+            echo '<script type="text/javascript">
+                    Swal.fire({
+                        title: "Tên đăng nhập không tồn tại!",
+                        icon: "error",
+                        text: "Vui lòng kiểm tra lại tên đăng nhập.",
+                        showConfirmButton: false,
+                        timer: 2000 // Ẩn sau 1 giây
+                    }).then(function() {
+                        window.location.href = "form.php"; // Sử dụng đường dẫn tuyệt đối
+                    });
+                </script>';
         }
     }
 
