@@ -113,14 +113,14 @@
                           <a href="#" data-action="page" class="menu-link menu-link-level-1 moto-link">ABOUT US</a>
                         </li>
                         <li class="moto-widget-menu-item menu-item-has-submenu">
-                          <a href="shop.php" data-action="store.category" class="menu-link menu-link-level-1 menu-link-submenu moto-link">SHOP
+                          <a href="../site/shop.php" data-action="store.category" class="menu-link menu-link-level-1 menu-link-submenu moto-link">SHOP
                             <i class="fa-solid fa-angle-down"></i></a>
                           <ul class="menu-sublist">
                             <li class="moto-widget-menu-item">
-                              <a href="dress.php" data-action="store.category" class="menu-link menu-link-level-2 moto-link">WEDDING DRESS</a>
+                              <a href="../site/dress.php" data-action="store.category" class="menu-link menu-link-level-2 moto-link">WEDDING DRESS</a>
                             </li>
                             <li class="moto-widget-menu-item">
-                              <a href="accessories.php" data-action="store.category" class="menu-link menu-link-level-2 moto-link">WEDDING
+                              <a href="../site/accessories.php" data-action="store.category" class="menu-link menu-link-level-2 moto-link">WEDDING
                                 ACCESSORIES</a>
                             </li>
                             <li class="moto-widget-menu-item">
@@ -404,7 +404,7 @@
                   <a href="" data-action="blog.index" class="menu-link menu-link-level-1 moto-link" bis_skin_checked="1">BLOG</a>
                 </li>
                 <li class="moto-widget-menu-item">
-                  <a href="shop.php" data-action="store.category" class="menu-link menu-link-level-1 moto-link" bis_skin_checked="1">SHOP</a>
+                  <a href="../site/shop.php" data-action="store.category" class="menu-link menu-link-level-1 moto-link" bis_skin_checked="1">SHOP</a>
                 </li>
                 <li class="moto-widget-menu-item">
                   <a href="" data-action="page" class="menu-link menu-link-level-1 moto-link" bis_skin_checked="1">CONTACTS</a>
