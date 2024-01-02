@@ -40,8 +40,9 @@
                         <div class="input-group mb-5 d-flex justify-content-between">
                             <div class="form-check">
                                 <input type="checkbox" class="form-check-input" id="formCheck">
-                                <label for="formCheck" class="form-check-label text-secondary"><small>Ghi nhớ
-                                        tôi</small></label>
+                                <label for="formCheck" class="form-check-label text-secondary">
+                                    <small>Ghi nhớ tôi</small>
+                                </label>
                             </div>
                             <div class="forgot">
                                 <small><a href="#">Quên mật khẩu?</a></small>
@@ -96,56 +97,6 @@
             </div>
         </div>
     </div>
-
-
-    <!-- Form Đăng Nhập -->
-    <!-- <section class="py-4">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 offset-md-3">
-                    <h2 class="text-center mb-4">Đăng nhập</h2>
-                    <form id="loginForm" method="POST" action="./login/login.php">
-                        <div class="mb-3">
-                            <label for="loginUsername" class="form-label">Tên đăng nhập:</label>
-                            <input type="text" class="form-control" id="loginUsername" name="loginUsername" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="loginPassword" class="form-label">Mật khẩu:</label>
-                            <input type="password" class="form-control" id="loginPassword" name="loginPassword"
-                                required>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Đăng nhập</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section> -->
-
-    <!-- Form Đăng Ký -->
-    <!-- <section class="py-4">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 offset-md-3">
-                    <h2 class="text-center mb-4">Đăng ký</h2>
-                    <form id="registrationForm" method="POST" action="./login/register.php">
-                        <div class="mb-3">
-                            <label for="username" class="form-label">Tên người dùng:</label>
-                            <input type="text" class="form-control" id="username" name="username" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="email" class="form-label">Email:</label>
-                            <input type="email" class="form-control" id="email" name="email" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="password" class="form-label">Mật khẩu:</label>
-                            <input type="password" class="form-control" id="password" name="password" required>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Đăng ký</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section> -->
 
     <script>
         function hienThiDangNhap() {
