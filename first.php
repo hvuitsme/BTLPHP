@@ -90,7 +90,7 @@
                         </div>
 
                         <div class="login text-center">
-                            <small>Bạn chưa có tài khoản: <a href="#" id="dangNhapLink">Đăng nhập ngay</a></small>
+                            <small>Bạn đã có tài khoản: <a href="#" id="dangNhapLink">Đăng nhập ngay</a></small>
                         </div>
                     </form>
                 </div>
