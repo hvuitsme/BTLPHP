@@ -191,7 +191,7 @@
     <div class="container type-categories">
       <div class="row">
         <div class="col-4 p-4">
-          <a href="/dress.php" class="card-link">
+          <a href="dress.php" class="card-link">
             <div class="card" style="width: 100%">
               <img
                 src="https://lavitta.vn/cdn/shop/files/z5009401811761_77bf56a6cf6eba0dbfd6a2fcc66288d7_600x.jpg?v=1703525193"
@@ -207,7 +207,7 @@
         </div>
 
         <div class="col-4 p-4">
-          <a href="/accessories.php" class="card-link">
+          <a href="accessories.php" class="card-link">
             <div class="card" style="width: 100%">
               <img
                 src="https://lavitta.vn/cdn/shop/files/z5009401802593_ac3db59bda6187bff17af1b8bbcfbbc5_600x.jpg?v=1703525097"
@@ -223,7 +223,7 @@
         </div>
 
         <div class="col-4 p-4">
-          <a href="/collections.php" class="card-link">
+          <a href="collections.php" class="card-link">
             <div class="card" style="width: 100%">
               <img
                 src="https://lavitta.vn/cdn/shop/files/z5009401283292_9fe878edd75c243caa8d1b1ed6927490_600x.jpg?v=1703524257"
@@ -335,28 +335,6 @@
       $conn->close();
       ?>
 <!-- hết đoạn thay đổi -->
-
-      <!-- <div class="col-sm-3">
-        <div class="card sp" style="width: 100%" onmouseover="addHoverEffect(this)" onmouseout="removeHoverEffect(this)"
-          onclick="redirectToAnotherPage()">
-          <img class="h-100"
-            src="https://lavitta.vn/cdn/shop/files/z5009401304552_6e7b6b911bc5b000603b56ca5b04a874_600x.jpg?v=1703524364"
-            alt="" />
-          <a href="#" class="eye-link">
-            <i class="fa-regular fa-eye"></i>
-          </a>
-        </div>
-
-        <div class="d-flex justify-content-center pt-3">
-          <p class="m-0">Đầm hồng cá tính</p>
-        </div>
-        
-        <div class="d-flex justify-content-center pt-3">
-          <button type="button" class="btn btn-danger">
-            Thêm vào giỏ hàng
-          </button>
-        </div>
-      </div> -->
     </div>
   </div>
 

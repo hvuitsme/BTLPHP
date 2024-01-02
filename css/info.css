@@ -1,0 +1,152 @@
+body {
+    background-color: #2b2c2c !important;
+    color: white !important;
+}
+
+a {
+    color: white !important;
+}
+
+/* .ecommerce-gallery {
+            margin-top: 20px;
+        }
+
+        .gallery-thumbnail {
+            cursor: pointer;
+            margin-bottom: 10px;
+            border: 2px solid transparent;
+        }
+
+        .gallery-thumbnail.active {
+            border-color: red;
+        }
+
+        .ecommerce-gallery-main-img {
+            width: 100%;
+            border: 1px solid #ddd;
+            padding: 10px;
+            opacity: 1;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        .lightbox {
+            overflow: hidden;
+        } */
+
+.ecommerce-gallery {
+    margin-top: 20px;
+}
+
+.gallery-thumbnail {
+    cursor: pointer;
+    margin-bottom: 10px;
+    border: 2px solid transparent;
+}
+
+.gallery-thumbnail.active {
+    border-color: red;
+}
+
+.ecommerce-gallery-main-img {
+    width: 100%;
+    border: 1px solid #ddd;
+    padding: 10px;
+    transition: transform 0.5s ease-in-out;
+}
+
+.lightbox {
+    overflow: hidden;
+    position: relative;
+}
+
+/* .share-container {
+            margin-left: 50px;
+            margin-right: 50px;
+            position: relative;
+        }
+
+        .share-icons {
+            display: none;
+            position: absolute;
+            top: 0;
+            right: 2px;
+            Điều chỉnh giá trị right để di chuyển về bên phải
+            background-color: white;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin-right: 2px;
+            Thêm margin-right để cách chữ "Share" khoảng 2px
+        }
+
+        .share-container:hover .share-icons {
+            display: flex;
+        } */
+
+.share-container {
+    padding-bottom: 10px;
+    margin-left: 50px;
+    margin-right: 50px;
+    display: flex;
+    align-items: center;
+}
+
+#share-text {
+    margin-right: 4px;
+    /* Cách chữ "Share" với biểu tượng 2px */
+}
+
+.share-icons {
+    display: none;
+    margin-left: 2px;
+    /* Cách biểu tượng với chữ "Share" 2px */
+}
+
+.share-container:hover .share-icons {
+    display: flex;
+}
+
+.share-icons i {
+    margin-right: 9px;
+    /* Cách giữa các biểu tượng 2px */
+}
+
+/* phần quantity selector */
+.quantity-container {
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.quantity-selector {
+    display: flex;
+    align-items: center;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.quantity-input {
+    background-color: #2b2c2c;
+    color: white;
+    width: 20px;
+    text-align: center;
+    margin: 0 10px;
+    border: none;
+    border-radius: 0;
+}
+
+.quantity-button {
+    cursor: pointer;
+    font-size: 18px;
+    user-select: none;
+    padding: 5px 10px;
+    border: none;
+    background-color: #2b2c2c;
+}
+
+.quantity-button:hover {
+    background-color: #383939;
+}
+
+/* thẻ hr col-7 sp */
