@@ -83,16 +83,15 @@
             if (password_verify($loginPassword, $row["password"])) {
                 // Đăng nhập thành công
                 echo '<script type="text/javascript">
-                    Swal.fire({
-                        title: "Đăng nhập thành công!",
-                        icon: "success",
-                        // confirmButtonText: "OK"
-                        showConfirmButton: false,
-                        timer: 2000 // Ẩn sau 1 giây
-                    }).then(function() {
-                        window.location.href = "index.php"; // Sử dụng đường dẫn tuyệt đối
-                    });
-                </script>';
+                        Swal.fire({
+                            title: "Đăng nhập thành công!",
+                            icon: "success",
+                            showConfirmButton: false,
+                            timer: 2000
+                        }).then(function() {
+                            window.location.href = "/xampp/php/BAITAP/BTLPHP/home/index.php"; // Đường dẫn đầy đủ
+                        });
+                    </script>';
                 exit();
             } else {
                 // Sai mật khẩu

@@ -18,7 +18,7 @@
             <div class="row">
                 <div class="col-md-6 offset-md-3">
                     <h2 class="text-center mb-4">Đăng nhập</h2>
-                    <form id="loginForm" method="POST" action="login.php">
+                    <form id="loginForm" method="POST" action="./login/login.php">
                         <div class="mb-3">
                             <label for="loginUsername" class="form-label">Tên đăng nhập:</label>
                             <input type="text" class="form-control" id="loginUsername" name="loginUsername" required>
@@ -41,7 +41,7 @@
             <div class="row">
                 <div class="col-md-6 offset-md-3">
                     <h2 class="text-center mb-4">Đăng ký</h2>
-                    <form id="registrationForm" method="POST" action="register.php">
+                    <form id="registrationForm" method="POST" action="./login/register.php">
                         <div class="mb-3">
                             <label for="username" class="form-label">Tên người dùng:</label>
                             <input type="text" class="form-control" id="username" name="username" required>

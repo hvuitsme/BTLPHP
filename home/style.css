@@ -507,7 +507,7 @@ input.search-form_input {
 }
 
 .banner-img.banner1 {
-    background-image: url('./img/Untitled-1.png');
+    background-image: url('../img/Untitled-1.png');
     background-position: center top;
     background-repeat: no-repeat;
     background-size: cover;
@@ -544,7 +544,7 @@ input.search-form_input {
 }
 
 .banner-img.banner2 {
-    background-image: url('./img/Untitled-2.png') !important;
+    background-image: url('../img/Untitled-2.png') !important;
     background-position: center top;
     background-repeat: no-repeat;
     background-size: cover;

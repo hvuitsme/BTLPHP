@@ -174,7 +174,7 @@
     <div class="container type-categories">
       <div class="row">
         <div class="col-4 p-4">
-          <a href="dress.php" class="card-link">
+          <a href="../site/dress.php" class="card-link">
             <div class="card" style="width: 100%">
               <img src="https://lavitta.vn/cdn/shop/files/z5009401811761_77bf56a6cf6eba0dbfd6a2fcc66288d7_600x.jpg?v=1703525193" class="card-img-top" alt="mau1" />
               <div class="overlay">
@@ -188,7 +188,7 @@
         </div>
 
         <div class="col-4 p-4">
-          <a href="accessories.php" class="card-link">
+          <a href="../site/accessories.php" class="card-link">
             <div class="card" style="width: 100%">
               <img src="https://lavitta.vn/cdn/shop/files/z5009401802593_ac3db59bda6187bff17af1b8bbcfbbc5_600x.jpg?v=1703525097" class="card-img-top" alt="mau2" />
               <div class="overlay">
@@ -202,7 +202,7 @@
         </div>
 
         <div class="col-4 p-4">
-          <a href="collections.php" class="card-link">
+          <a href="../site/collections.php" class="card-link">
             <div class="card" style="width: 100%">
               <img src="https://lavitta.vn/cdn/shop/files/z5009401283292_9fe878edd75c243caa8d1b1ed6927490_600x.jpg?v=1703524257" class="card-img-top" alt="mau3" />
               <div class="overlay">
@@ -253,7 +253,7 @@
       </h1>
 
       <h1 class="text-center text-white mb-4">OUR PRODUCTS</h1>
-      <!-- chỗ đã thay đổi -->
+
       <?php
       // Kết nối đến cơ sở dữ liệu
       $servername = "localhost";
@@ -308,7 +308,6 @@
       $conn->close();
       ?>
 
-      <!-- hết đoạn thay đổi -->
     </div>
   </div>
 
