@@ -103,7 +103,7 @@
                             showConfirmButton: false,
                             timer: 2000 // Ẩn sau 1 giây
                         }).then(function() {
-                            window.location.href = "form.php"; // Sử dụng đường dẫn tuyệt đối
+                            window.location.href = "/xampp/php/BAITAP/BTLPHP/first.php"; // Sử dụng đường dẫn tuyệt đối
                         });
                     </script>';
             }
@@ -117,7 +117,7 @@
                         showConfirmButton: false,
                         timer: 2000 // Ẩn sau 1 giây
                     }).then(function() {
-                        window.location.href = "form.php"; // Sử dụng đường dẫn tuyệt đối
+                        window.location.href = "/xampp/php/BAITAP/BTLPHP/first.php"; // Sử dụng đường dẫn tuyệt đối
                     });
                 </script>';
         }
