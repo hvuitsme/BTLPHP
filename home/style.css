@@ -499,6 +499,55 @@ input.search-form_input {
     display: none;
 }
 
+/* riêng phần này của icon user */
+#user-info {
+    display: none;
+    position: absolute;
+    background-color: #e6e5dbba;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    /* top: 59%; */
+    /* Đưa về giữa theo chiều dọc */
+    /* left: 50%; */
+    /* Đưa về giữa theo chiều ngang */
+    transform: translate(-40%, 0%);
+    /* Dịch chuyển về giữa */
+}
+
+
+#user-icon:hover+#user-info,
+#user-info:hover {
+    display: block;
+}
+
+#user-icon {
+    position: relative;
+    cursor: pointer;
+}
+
+.fa-user {
+    /* Thêm kiểu dáng cho icon fa-user */
+    color: #333;
+}
+
+.c-rounded {
+    border-radius: 10px;
+    /* Đặt giá trị này tùy thuộc vào độ cong mong muốn */
+}
+
+#logOutbtn {
+    border-color: #e5d9cf;
+    color: black;
+}
+
+#logOutbtn:hover {
+    border-color: #e5d9cf;
+    background-color: #e5d9cf;
+    color: white;
+}
+
 
 @media (max-width: 768px) {
     .moto-widget-menu-toggle-btn.visible-xs {

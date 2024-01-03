@@ -74,27 +74,16 @@
 
       <div class="col-sm-9">
 
-        <hr class="custom-hr" />
-
-        <h1>SHOP</h1>
+        <div class="container">
+          <hr class="custom-hr" />
+          <h1>SHOP</h1>
+        </div>
+        
         <div class="container pt_2">
           <div class="row">
-
             <?php
-            // Kết nối đến cơ sở dữ liệu
-            $servername = "localhost";
-            $username = "root";
-            $password = "";
-            $dbname = "web";
+            include 'C:/xampp/php/BAITAP/BTLPHP/db/dbconnect.php';
 
-            $conn = new mysqli($servername, $username, $password, $dbname);
-
-            // Kiểm tra kết nối
-            if ($conn->connect_error) {
-              die("Kết nối không thành công: " . $conn->connect_error);
-            }
-            ?>
-            <?php
             $sql = "SELECT * FROM `image_demo_vaycuoi`";
             $result = $conn->query($sql);
 
@@ -102,7 +91,7 @@
               // Duyệt qua từng dòng dữ liệu
               while ($row = $result->fetch_assoc()) {
                 ?>
-                <div class="col-sm-3">
+                <div class="col-sm-3 pb-3">
                   <div class="card sp" style="width: 100%" onmouseover="addHoverEffect(this)"
                     onmouseout="removeHoverEffect(this)" onclick="redirectToAnotherPage()">
                     <img class="h-100" src="data:image/jpeg;base64,<?= base64_encode($row['image_sp_demo']) ?>" alt="" />

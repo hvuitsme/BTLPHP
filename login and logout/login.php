@@ -82,6 +82,8 @@
             $row = $result->fetch_assoc();
             if (password_verify($loginPassword, $row["password"])) {
                 // Đăng nhập thành công
+                session_start();
+                $_SESSION['username'] = $row['user'];
                 echo '<script type="text/javascript">
                         Swal.fire({
                             title: "Đăng nhập thành công!",

@@ -67,9 +67,66 @@
                       </a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" ng-click="handleTargetPage()">
+                      <a class="nav-link" ng-click="handleTargetPage()" id="user-icon">
                         <i class="fa fa-user"></i>
                       </a>
+                      <div class="user-info" id="user-info">
+                        <!-- <img src="../img/avatar.png" class="c-rounded" style="width: 200px; height: 200px;" alt=""> -->
+                        <?php
+                        include 'C:/xampp/php/BAITAP/BTLPHP/db/dbconnect.php';
+
+                        // Kiểm tra xem 'username' đã được thiết lập trong session trước khi sử dụng
+                        if (isset($_SESSION['username'])) {
+                          echo '<p class="pt-2 mb-1">User: ' . $_SESSION['username'] . '</p>';
+                        }
+
+                        // Bạn cần có một session đã đăng nhập để lấy thông tin tài khoản hiện tại
+                        session_start();
+
+                        if (isset($_SESSION['username'])) {
+                          $username = $_SESSION['username'];
+
+                          // Truy vấn để lấy thông tin tài khoản
+                          $sql = "SELECT * FROM users WHERE user = '$username'";
+                          $result = $conn->query($sql);
+
+                          if ($result->num_rows > 0) {
+                            $row = $result->fetch_assoc();
+
+                            // Hiển thị hình ảnh avatar
+                            echo '<img class="c-rounded" src="data:image/jpeg;base64,' . base64_encode($row['avatar']) . '"style="width: 200px; height: 200px;"  alt="Avatar">';
+
+                            // hiển thị username
+                            echo '<p class="pt-2 mb-0">User: ' . $_SESSION['username'] . '</p>';
+
+                            // Hiển thị số dư
+                            echo '<p class="">Số dư: ' . number_format($row['balance']) . ' &#8363;</p>';
+
+                            // Hiển thị nút đăng xuất
+                            echo '<div class="d-flex justify-content-center">
+                                    <button class="btn btn-outline-primary" id="logOutbtn" onclick="logout()">Đăng xuất</button>
+                                  </div>';
+                          } else {
+                            echo "Không tìm thấy thông tin tài khoản.";
+                          }
+                        } else {
+                          echo "Bạn chưa đăng nhập.";
+                        }
+
+                        // Đóng kết nối
+                        $conn->close();
+                        ?>
+
+                        <script>
+                          function logout() {
+                            // Xử lý đăng xuất ở phía client (bằng JavaScript)
+                            window.location.href = '../login and logout/logout.php'; // Chuyển hướng đến tệp logout.php để xử lý đăng xuất
+
+                            // Bạn có thể thêm dòng sau để chuyển hướng người dùng trở lại trang đăng nhập ngay sau khi đăng xuất
+                            // window.location.href = '../login and logout/login.php'; // Thay thế 'login.php' bằng trang bạn muốn chuyển hướng đến
+                          }
+                        </script>
+                      </div>
                     </li>
                   </ul>
                 </div>
@@ -279,22 +336,9 @@
       </h1>
 
       <h1 class="text-center text-white mb-4">OUR PRODUCTS</h1>
-
       <?php
-      // Kết nối đến cơ sở dữ liệu
-      $servername = "localhost";
-      $username = "root";
-      $password = "";
-      $dbname = "web";
+      include 'C:/xampp/php/BAITAP/BTLPHP/db/dbconnect.php';
 
-      $conn = new mysqli($servername, $username, $password, $dbname);
-
-      // Kiểm tra kết nối
-      if ($conn->connect_error) {
-        die("Kết nối không thành công: " . $conn->connect_error);
-      }
-      ?>
-      <?php
       $sql = "SELECT * FROM `image_demo_vaycuoi`";
       $result = $conn->query($sql);
 

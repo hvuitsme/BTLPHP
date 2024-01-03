@@ -21,12 +21,15 @@
                 </div>
             </div>
             <div class="col-md-7">
+
+                <!-- đăng nhập -->
+
                 <div class="row align-items-center" id="dangNhap">
                     <div class="header-text mb-4">
                         <p>Đăng nhập</p>
                     </div>
 
-                    <form id="loginForm" method="POST" action="./login/login.php">
+                    <form id="loginForm" method="POST" action="./login and logout/login.php">
                         <div class="mb-3">
                             <input type="text" class="form-control" id="loginUsername" name="loginUsername" required
                                 placeholder="Username">
@@ -45,7 +48,7 @@
                                 </label>
                             </div>
                             <div class="forgot">
-                                <small><a href="#">Quên mật khẩu?</a></small>
+                                <small><a href="#" id="QmKhau">Quên mật khẩu?</a></small>
                             </div>
                         </div>
 
@@ -59,12 +62,38 @@
                     </form>
                 </div>
 
+                <!-- quên mật khẩu -->
+
+                <div class="row align-items-center" id="quenMatKhau">
+                    <!-- Form và nút cho phần quên mật khẩu -->
+                    <div class="header-text mb-4">
+                        <p>Quên mật khẩu</p>
+                    </div>
+
+                    <form id="forgotPasswordForm" method="POST" action="./login and logout/forgot_password.php">
+                        <div class="mb-3">
+                            <input type="email" class="form-control" id="forgotEmail" name="forgotEmail" required
+                                placeholder="Email">
+                        </div>
+
+                        <div class="loggin-button mb-3">
+                            <button type="summit" class="btn btn-outline-primary w-100">Gửi yêu cầu</button>
+                        </div>
+                    </form>
+
+                    <div class="register text-center">
+                        <small><a href="#" id="quayVeDangNhap">Quay lại đăng nhập</a></small>
+                    </div>
+                </div>
+
+                <!-- đăng ký -->
+
                 <div class="row align-items-center" id="dangKy">
                     <div class="header-text mb-4">
                         <p>Đăng ký</p>
                     </div>
 
-                    <form id="registrationForm" method="POST" action="./login/register.php">
+                    <form id="registrationForm" method="POST" action="./login and logout/register.php">
                         <div class="mb-3">
                             <input type="text" class="form-control" id="username" name="username" required
                                 placeholder="Username">
@@ -99,16 +128,28 @@
     </div>
 
     <script>
+        // hiển thị đăng nhập
         function hienThiDangNhap() {
             document.getElementById('dangKy').style.display = 'none';
+            document.getElementById('quenMatKhau').style.display = 'none';
             document.getElementById('dangNhap').style.display = 'block';
         }
 
+        // hiển thị đăng ký
         function hienThiDangKy() {
+            document.getElementById('quenMatKhau').style.display = 'none';
             document.getElementById('dangNhap').style.display = 'none';
             document.getElementById('dangKy').style.display = 'block';
         }
 
+        // hiển thị quên mật khẩu
+        function hienThiQuenMatKhau() {
+            document.getElementById('dangNhap').style.display = 'none';
+            document.getElementById('dangKy').style.display = 'none';
+            document.getElementById('quenMatKhau').style.display = 'block';
+        }
+
+        // kiểm tra mật khẩu phải trùng nhau
         function kiemTraMatKhau() {
             var password = document.getElementById('password').value;
             var confirmPassword = document.getElementById('confirmPassword').value;
@@ -126,6 +167,18 @@
             // Lắng nghe sự kiện click trên liên kết "Đăng ký ngay"
             document.querySelector('#dangKyLink').addEventListener('click', function () {
                 hienThiDangKy(); // Gọi hàm để ẩn dangNhap và hiển thị dangKy
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            document.querySelector('#QmKhau').addEventListener('click', function (event) {
+                event.preventDefault();
+                hienThiQuenMatKhau();
+            });
+
+            document.querySelector('#quayVeDangNhap').addEventListener('click', function (event) {
+                event.preventDefault();
+                hienThiDangNhap();
             });
         });
 
