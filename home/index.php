@@ -36,9 +36,9 @@
         <div class="row w-100">
           <div class="col-lg-6 align-self-center">
             <p class="moto-text_system_2 mb-0">
-              <span class="d-flex justify-content-center align-items-center"><i
-                  class="fa-solid fa-phone fa-sm"></i></span>&nbsp;&nbsp;<a href="tel:1234567890">+3(800)
-                2345-6789</a>&nbsp; 7 Days a week from 9:00 am to 7:00 pm
+              <span class="d-flex justify-content-center align-items-center">
+                <i class="fa-solid fa-phone fa-sm"></i></span>&nbsp;&nbsp;<a href="#" style="text-decoration: none;" >
+                +84 395.399.892</a>&nbsp;Từ 9:00 đến 19:00 tất cả các ngày trong tuần
             </p>
           </div>
           <div class="col-lg-6">
@@ -120,10 +120,10 @@
                         <script>
                           function logout() {
                             // Xử lý đăng xuất ở phía client (bằng JavaScript)
-                            window.location.href = '../login and logout/logout.php'; // Chuyển hướng đến tệp logout.php để xử lý đăng xuất
+                            window.location.href = '../login,logout,forgot/logout.php'; // Chuyển hướng đến tệp logout.php để xử lý đăng xuất
 
                             // Bạn có thể thêm dòng sau để chuyển hướng người dùng trở lại trang đăng nhập ngay sau khi đăng xuất
-                            // window.location.href = '../login and logout/login.php'; // Thay thế 'login.php' bằng trang bạn muốn chuyển hướng đến
+                            // window.location.href = '../login,logout,forgot/login.php'; // Thay thế 'login.php' bằng trang bạn muốn chuyển hướng đến
                           }
                         </script>
                       </div>
@@ -175,7 +175,7 @@
                       <ul class="menu-list menu-list_horizontal header m-0">
                         <li class="moto-widget-menu-item">
                           <a href="#" data-action="home_page"
-                            class="menu-link menu-link-level-1 menu-link-active moto-link">HOME</a>
+                            class="menu-link menu-link-level-1 menu-link-active moto-link">TRANG CHỦ</a>
                         </li>
                         <li class="moto-widget-menu-item">
                           <a href="#" data-action="page" class="menu-link menu-link-level-1 moto-link">ABOUT US</a>
@@ -187,17 +187,15 @@
                           <ul class="menu-sublist">
                             <li class="moto-widget-menu-item">
                               <a href="../site/dress.php" data-action="store.category"
-                                class="menu-link menu-link-level-2 moto-link">WEDDING DRESS</a>
+                                class="menu-link menu-link-level-2 moto-link">VÁY CƯỚI</a>
                             </li>
                             <li class="moto-widget-menu-item">
                               <a href="../site/accessories.php" data-action="store.category"
-                                class="menu-link menu-link-level-2 moto-link">WEDDING
-                                ACCESSORIES</a>
+                                class="menu-link menu-link-level-2 moto-link">PHỤ KIỆN</a>
                             </li>
                             <li class="moto-widget-menu-item">
                               <a href="collections.php" data-action="store.category"
-                                class="menu-link menu-link-level-2 moto-link">EXCLUSIVE
-                                COLLECTION</a>
+                                class="menu-link menu-link-level-2 moto-link">BỘ SƯU TẬP ĐỘC QUYỀN</a>
                             </li>
                           </ul>
                         </li>
@@ -205,7 +203,7 @@
                           <a href="#" data-action="blog.index" class="menu-link menu-link-level-1 moto-link">BLOG</a>
                         </li>
                         <li class="moto-widget-menu-item">
-                          <a href="#" data-action="page" class="menu-link menu-link-level-1 moto-link">CONTACTS</a>
+                          <a href="#" data-action="page" class="menu-link menu-link-level-1 moto-link">LIÊN HỆ</a>
                         </li>
                       </ul>
                     </div>
@@ -487,7 +485,7 @@
               <ul class="menu-list menu-list_horizontal footer">
                 <li class="moto-widget-menu-item">
                   <a href="index.php" data-action="home_page"
-                    class="menu-link menu-link-level-1 menu-link-active moto-link" bis_skin_checked="1">HOME</a>
+                    class="menu-link menu-link-level-1 menu-link-active moto-link" bis_skin_checked="1">TRANG CHỦ</a>
                 </li>
                 <li class="moto-widget-menu-item">
                   <a href="" data-action="page" class="menu-link menu-link-level-1 moto-link" bis_skin_checked="1">ABOUT
@@ -503,7 +501,7 @@
                 </li>
                 <li class="moto-widget-menu-item">
                   <a href="" data-action="page" class="menu-link menu-link-level-1 moto-link"
-                    bis_skin_checked="1">CONTACTS</a>
+                    bis_skin_checked="1">LIÊN HỆ</a>
                 </li>
               </ul>
             </div>

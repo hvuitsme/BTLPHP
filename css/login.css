@@ -1,6 +1,22 @@
 body {
   /* background-color: #e5d9cf !important; */
+  /* background-image: url('../img/banner4_1.png'); */
   background-image: url('../img/banner4_1.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  /* Các thuộc tính khác nếu cần thiết */
+  margin: 0;
+  padding: 0;
+  height: 100vh; /* Đảm bảo body chiếm toàn bộ chiều cao của màn hình */
+}
+
+#rsPass{
+  display: none;
+}
+
+#nhapOTP{
+  display: none;
 }
 
 #quenMatKhau {

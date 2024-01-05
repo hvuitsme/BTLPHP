@@ -61,7 +61,9 @@
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $username = $_POST["username"];
         $email = $_POST["email"];
-        $password = password_hash($_POST["password"], PASSWORD_DEFAULT);
+        $password = $_POST["password"];  // Giữ mật khẩu dưới dạng văn bản thông thường
+        // $password = md5($_POST["password"]);  // Sử dụng md5 để mã hóa mật khẩu
+        // $password = password_hash($_POST["password"], PASSWORD_DEFAULT);
 
         // Thêm người dùng vào cơ sở dữ liệu
         $sql = "INSERT INTO users (user, email, password) VALUES ('$username', '$email', '$password')";

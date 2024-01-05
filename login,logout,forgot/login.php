@@ -80,7 +80,8 @@
 
         if ($result->num_rows > 0) {
             $row = $result->fetch_assoc();
-            if (password_verify($loginPassword, $row["password"])) {
+            // if (password_verify($loginPassword, $row["password"]) {
+            if ($loginPassword === $row["password"]) {
                 // Đăng nhập thành công
                 session_start();
                 $_SESSION['username'] = $row['user'];
