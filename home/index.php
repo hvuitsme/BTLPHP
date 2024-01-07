@@ -357,7 +357,7 @@
             <div class="d-flex justify-content-center pt-3">
               <p class="m-0 text-center">
                 <?= $row['name_sp'] ?><br>
-                <?= $row['code_sp'] ?><br>
+                <!-- <?= $row['code_sp'] ?><br> -->
                 <?= '<span style="color: #dc3545;">' . number_format($row['price']) . '&#8363;</span>' ?>
               </p>
             </div>
