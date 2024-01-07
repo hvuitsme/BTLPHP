@@ -25,7 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_FILES["image"])) {
     $imageData = file_get_contents($_FILES["image"]["tmp_name"]);
 
     // Thực hiện truy vấn để thêm dữ liệu vào bảng 'tb_image'
-    $stmt_image = $conn->prepare("INSERT INTO tb_image (id_sp, name_sp, image_sp, price, Brands, status, code_sp) VALUES (?, ?, ?, ?, ?, ?, ?)");
+    $stmt_image = $conn->prepare("INSERT INTO tb_image (id_sp, name_sp, image_sp, price, Brands, status, code_pk) VALUES (?, ?, ?, ?, ?, ?, ?)");
     if (!$stmt_image) {
         die("Lỗi câu truy vấn tb_image: " . $conn->error);
     }
@@ -83,7 +83,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_FILES["image"])) {
         <input type="text" name="price"><br>
 
         <label for="brands">Thương hiệu:</label>
-        <input type="text" name="brands" required><br>
+        <input type="text" name="brands" ><br>
 
         <label for="status">Trạng thái:</label>
         <input type="text" name="status" required><br>
