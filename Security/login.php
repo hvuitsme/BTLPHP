@@ -92,7 +92,7 @@
                             showConfirmButton: false,
                             timer: 2000
                         }).then(function() {
-                            window.location.href = "http://localhost:3000/BTLPHP/home/index.php"; // Đường dẫn đầy đủ
+                            window.location.href = "/xampp/php/BAITAP/BTLPHP/home/index.php"; // Đường dẫn đầy đủ
                         });
                     </script>';
                 exit();
@@ -106,7 +106,7 @@
                             showConfirmButton: false,
                             timer: 2000 // Ẩn sau 1 giây
                         }).then(function() {
-                            window.location.href = "http://localhost:3000/BTLPHP/first.php#"; // Sử dụng đường dẫn tuyệt đối
+                            window.location.href = "/xampp/php/BAITAP/BTLPHP/first.php#"; // Sử dụng đường dẫn tuyệt đối
                         });
                     </script>';
             }
@@ -120,7 +120,7 @@
                         showConfirmButton: false,
                         timer: 2000 // Ẩn sau 1 giây
                     }).then(function() {
-                        window.location.href = "http://localhost:3000/BTLPHP/first.php#"; // Sử dụng đường dẫn tuyệt đối
+                        window.location.href = "/xampp/php/BAITAP/BTLPHP/first.php#"; // Sử dụng đường dẫn tuyệt đối
                     });
                 </script>';
         }
