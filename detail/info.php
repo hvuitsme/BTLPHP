@@ -4,20 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/info.css">
+    <link rel="stylesheet" href="../css/info.css">
     <title>Document</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100&family=Lobster&family=Taviraj:wght@100;300&display=swap"
-        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100&family=Lobster&family=Taviraj:wght@100;300&display=swap" rel="stylesheet" />
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <style>
@@ -29,48 +24,92 @@
 </style>
 
 <body>
+
     <div class="container">
         <div class="row pt-5">
             <div class="col-sm-7">
-                <div class="ecommerce-gallery" data-mdb-zoom-effect="true" data-mdb-auto-height="true">
+                <!-- <div class="ecommerce-gallery" data-mdb-zoom-effect="true" data-mdb-auto-height="true">
                     <div class="row shadow-5">
                         <div class="col-4">
                             <div class="mt-1 d-flex flex-row-reverse">
-                                <img src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Vertical/14a.webp"
-                                    alt="Gallery image 1" class="gallery-thumbnail rounded w-50 active" />
+                                <img src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Vertical/14a.webp" alt="Gallery image 1" class="gallery-thumbnail rounded w-50 active" />
                             </div>
                             <div class="mt-1 d-flex flex-row-reverse">
-                                <img src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Vertical/12a.webp"
-                                    alt="Gallery image 2" class="gallery-thumbnail rounded w-50" />
+                                <img src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Vertical/12a.webp" alt="Gallery image 2" class="gallery-thumbnail rounded w-50" />
                             </div>
                             <div class="mt-1 d-flex flex-row-reverse">
-                                <img src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Vertical/13a.webp"
-                                    alt="Gallery image 3" class="gallery-thumbnail rounded w-50" />
+                                <img src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Vertical/13a.webp" alt="Gallery image 3" class="gallery-thumbnail rounded w-50" />
                             </div>
                             <div class="mt-1 d-flex flex-row-reverse">
-                                <img src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Vertical/15a.webp"
-                                    alt="Gallery image 4" class="gallery-thumbnail rounded w-50" />
+                                <img src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Vertical/15a.webp" alt="Gallery image 4" class="gallery-thumbnail rounded w-50" />
                             </div>
                         </div>
                         <div class="col-8 mb-1">
                             <div class="lightbox">
-                                <img src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Vertical/14a.webp"
-                                    alt="Gallery image 1" class="ecommerce-gallery-main-img active rounded" />
-                                <!-- Add other images here with the same class but different source -->
+                                <img src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Vertical/14a.webp" alt="Gallery image 1" class="ecommerce-gallery-main-img active rounded" />
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
+                <?php
+                include 'C:/xampp/php/BAITAP/BTLPHP/db/dbconnect.php';
+
+                function displayProductByCode($code_sp, $conn)
+                {
+                    $sql = "SELECT * FROM tb_image WHERE code_sp = '$code_sp'";
+                    $result = $conn->query($sql);
+
+                    if ($result->num_rows > 0) {
+                        echo '<div class="ecommerce-gallery" data-mdb-zoom-effect="true" data-mdb-auto-height="true">';
+                        echo '<div class="row shadow-5">';
+                        echo '<div class="col-4">';
+
+                        $firstImage = true; // Variable to track the first image
+
+                        while ($row = $result->fetch_assoc()) {
+                            echo '<div class="mt-1 d-flex flex-row-reverse">';
+                            $borderClass = $firstImage ? 'border-red' : ''; // Apply border class conditionally
+                            echo '<img src="data:image/jpeg;base64,' . base64_encode($row['image_sp']) . '" alt=""' . $row['name_sp'] . '" class="gallery-thumbnail rounded w-50 ' . $borderClass . '" />';
+                            echo '</div>';
+                            $firstImage = false; // Update the variable after the first image
+                        }
+
+                        echo '</div>';
+                        echo '<div class="col-8 mb-1">';
+                        echo '<div class="lightbox">';
+                        $result->data_seek(0); // Reset the result pointer to the beginning for the main image
+                        $row = $result->fetch_assoc();
+                        echo '<img src="data:image/jpeg;base64,' . base64_encode($row['image_sp']) . '" alt="' . $row['name_sp'] . '" class="ecommerce-gallery-main-img active rounded" />';
+                        echo '</div>';
+                        echo '</div>';
+                        echo '</div>';
+                        echo '</div>';
+                    } else {
+                        echo 'Product not found.';
+                    }
+                }
+
+                // ví trí thêm code sản phẩm
+                $code_sp = "BM1";
+                displayProductByCode($code_sp, $conn);
+
+                // Close connection
+                $conn->close();
+                ?>
+
+
                 <div class="row">
-                    
-                    <div class="col-sm-10">
+                    <div class="col-sm-2">
+
+                    </div>
+                    <div class="col-sm-10 ">
                         <hr>
                     </div>
                 </div>
             </div>
             <div class="col-sm-5 py-4">
-                <div class="" style="margin-left: 50px; margin-right: 50px" ;>
-                    <p class="pt-3">AZALEA SHOP</p>
+                <div class="" style="margin-left: 50px; margin-right: 50px" ;>    
+                <p class="pt-3">AZALEA SHOP</p>
                     <p>VL38 + T</p>
                     <p><del>71.749.000₫</del></p>
                     <p>7.749.000₫</p>
@@ -101,7 +140,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row pt-5" style="padding-left: 12px; padding-right: 12px;" >
+                    <div class="row pt-5" style="padding-left: 12px; padding-right: 12px;">
                         <button type="button" class="btn btn-outline-light">Mua ngay</button>
                     </div>
                 </div>
@@ -154,8 +193,8 @@
 
     <!-- orther effects -->
     <script>
-        $(document).ready(function () {
-            $('.gallery-thumbnail').click(function () {
+        $(document).ready(function() {
+            $('.gallery-thumbnail').click(function() {
                 $('.gallery-thumbnail').removeClass('active');
                 $(this).addClass('active');
                 var imgSrc = $(this).attr('src');
@@ -166,7 +205,7 @@
                 // }, 300);
 
                 $('.ecommerce-gallery-main-img').css('filter', 'blur(3px)'); // Điều chỉnh giá trị theo yêu cầu của bạn
-                setTimeout(function () {
+                setTimeout(function() {
                     $('.ecommerce-gallery-main-img').css('filter', 'blur(0)');
                 }, 300);
             });

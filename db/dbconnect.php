@@ -12,3 +12,4 @@ if ($conn->connect_error) {
     die("Kết nối không thành công: " . $conn->connect_error);
 }
 ?>
+<!-- include 'C:/xampp/php/BAITAP/BTLPHP/db/dbconnect.php'; -->

@@ -1,6 +1,7 @@
 <?php
 include_once './mail/index.php';
 $mail = new Mailer();
+session_start();
 ?>
 
 <!DOCTYPE html>
@@ -12,16 +13,14 @@ $mail = new Mailer();
     <link rel="stylesheet" href="./css/login.css">
     <title>Log in</title>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body>
     <div class="container d-flex justify-content-center align-items-center vh-100">
         <div class="row border-4 rounded-5 p-3 bg-white shadow box-area">
-            <div class="col-md-5 d-flex justify-content-center align-items-center flex-column left-box"
-                style="padding-left: 0;">
+            <div class="col-md-5 d-flex justify-content-center align-items-center flex-column left-box" style="padding-left: 0;">
                 <div class="featured-image">
                     <img class="rounded-4 imgbox" src="./img/feature-image.jpg" alt="anhdangnhap">
                 </div>
@@ -35,15 +34,13 @@ $mail = new Mailer();
                         <p>Đăng nhập</p>
                     </div>
 
-                    <form id="loginForm" method="POST" action="./login,logout,forgot/login.php">
+                    <form id="loginForm" method="POST" action="./Security/login.php">
                         <div class="mb-3">
-                            <input type="text" class="form-control" id="loginUsername" name="loginUsername" required
-                                placeholder="Username">
+                            <input type="text" class="form-control" id="loginUsername" name="loginUsername" required placeholder="Username">
                         </div>
 
                         <div class="mb-3">
-                            <input type="password" class="form-control" id="loginPassword" name="loginPassword" required
-                                placeholder="Password">
+                            <input type="password" class="form-control" id="loginPassword" name="loginPassword" required placeholder="Password">
                         </div>
 
                         <div class="input-group mb-5 d-flex justify-content-between">
@@ -75,25 +72,21 @@ $mail = new Mailer();
                         <p>Đăng ký</p>
                     </div>
 
-                    <form id="registrationForm" method="POST" action="./login,logout,forgot/register.php">
+                    <form id="registrationForm" method="POST" action="./Security/register.php">
                         <div class="mb-3">
-                            <input type="text" class="form-control" id="username" name="username" required
-                                placeholder="Username">
+                            <input type="text" class="form-control" id="username" name="username" required placeholder="Username">
                         </div>
 
                         <div class="mb-3">
-                            <input type="email" class="form-control" id="email" name="email" required
-                                placeholder="Email">
+                            <input type="email" class="form-control" id="email" name="email" required placeholder="Email">
                         </div>
 
                         <div class="input-group mb-3">
-                            <input type="password" class="form-control" id="password" name="password" required
-                                placeholder="Password">
+                            <input type="password" class="form-control" id="password" name="password" required placeholder="Password">
                         </div>
 
                         <div class="input-group mb-3">
-                            <input type="password" class="form-control" id="confirmPassword" name="confirmPassword"
-                                required placeholder="Confirm password">
+                            <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" required placeholder="Confirm password">
                         </div>
 
                         <div class="loggin-button mb-3">
@@ -114,14 +107,12 @@ $mail = new Mailer();
                         <p>Quên mật khẩu</p>
                     </div>
 
-                    <form id="forgotPasswordForm" method="POST" action="./login,logout,forgot/forgot_password.php">
+                    <form id="forgotPasswordForm" method="POST" action="./Security/forgot_password.php">
                         <div class="mb-3">
-                            <input type="text" class="form-control" id="forgotUser" name="forgotUser" required
-                                placeholder="User">
+                            <input type="text" class="form-control" id="forgotUser" name="forgotUser" required placeholder="User">
                         </div>
                         <div class="mb-3">
-                            <input type="email" class="form-control" id="forgotEmail" name="forgotEmail" required
-                                placeholder="Email">
+                            <input type="email" class="form-control" id="forgotEmail" name="forgotEmail" required placeholder="Email">
                         </div>
 
                         <div class="loggin-button mb-3">
@@ -142,11 +133,9 @@ $mail = new Mailer();
                         <p>Nhập OTP</p>
                     </div>
 
-                    <form id="verifyOTPForm" method="POST" action="./login,logout,forgot/verify_otp.php">
-                        <input type="hidden" name="forgotUser"
-                            value="<?php echo isset($_POST['forgotUser']) ? $_POST['forgotUser'] : ''; ?>">
-                        <input type="hidden" name="forgotEmail"
-                            value="<?php echo isset($_POST['forgotEmail']) ? $_POST['forgotEmail'] : ''; ?>">
+                    <form id="verifyOTPForm" method="POST" action="./Security/verify_otp.php">
+                        <input type="hidden" name="forgotUser" value="<?php echo isset($_POST['forgotUser']) ? $_POST['forgotUser'] : ''; ?>">
+                        <input type="hidden" name="forgotEmail" value="<?php echo isset($_POST['forgotEmail']) ? $_POST['forgotEmail'] : ''; ?>">
 
                         <div class="mb-3">
                             <input type="text" class="form-control" id="OTP" name="OTP" required placeholder="Nhập OTP">
@@ -165,28 +154,47 @@ $mail = new Mailer();
                         <p>Thay đổi mật khẩu</p>
                     </div>
 
-                    <form id="rsPassForm" method="POST" action="./login,logout,forgot/rspass.php">
+                    <form id="rsPassForm" method="POST" action="./Security/rspass.php">
                         <!-- Thêm trường ẩn để truyền user/email -->
-                        <input type="hidden" name="forgotUser"
-                            value="<?php echo isset($_POST['forgotUser']) ? $_POST['forgotUser'] : ''; ?>">
-                        <input type="hidden" name="forgotEmail"
-                            value="<?php echo isset($_POST['forgotEmail']) ? $_POST['forgotEmail'] : ''; ?>">
+                        <input type="hidden" name="forgotUser" value="<?php echo isset($_POST['forgotUser']) ? $_POST['forgotUser'] : ''; ?>">
+                        <input type="hidden" name="forgotEmail" value="<?php echo isset($_POST['forgotEmail']) ? $_POST['forgotEmail'] : ''; ?>">
 
+                        <?php
+                        include "C:/xampp/php/BAITAP/BTLPHP/db/dbconnect.php";
+                        $forgotUser = $_SESSION['forgotPasswordUser'];
+                        $forgotEmail = $_SESSION['forgotPasswordEmail'];
+
+                        // Thực hiện truy vấn để lấy tên và email cho tài khoản cụ thể
+                        $query = "SELECT user, email FROM users WHERE user = '$forgotUser' AND email = '$forgotEmail'";
+                        $result = $conn->query($query);
+
+                        // Kiểm tra và hiển thị kết quả
+                        if ($result->num_rows > 0) {
+                            // Lặp qua từng dòng kết quả
+                            while ($row = $result->fetch_assoc()) {
+                                // Hiển thị tên và email
+                                echo "<p>Tên: " . $row["user"] . "<br>Email: " . $row["email"] . "</p>";
+                            }
+                        } else {
+                            echo "Không có dữ liệu hoặc thông tin không chính xác.";
+                        }
+
+                        // Đóng kết nối
+                        $conn->close();
+                        ?>
                         <div class="input-group mb-3">
-                            <input type="password" class="form-control" id="NewPassword" name="NewPassword" required
-                                placeholder="Mật khẩu mới">
+                            <input type="password" class="form-control" id="NewPassword" name="NewPassword" required placeholder="Mật khẩu mới">
                         </div>
 
                         <div class="input-group mb-3">
-                            <input type="password" class="form-control" id="CNewPassword" name="CNewPassword" required
-                                placeholder="Xác nhận mật khẩu mới">
+                            <input type="password" class="form-control" id="CNewPassword" name="CNewPassword" required placeholder="Xác nhận mật khẩu mới">
                         </div>
 
                         <div class="rspass-button mb-3">
                             <button type="submit" class="btn btn-outline-primary w-100">Thay đổi mật khẩu</button>
                         </div>
                     </form>
-                </div> 
+                </div>
             </div>
         </div>
     </div>
@@ -242,36 +250,36 @@ $mail = new Mailer();
         }
 
         // hành động cho nút đăng ký
-        document.addEventListener('DOMContentLoaded', function () {
+        document.addEventListener('DOMContentLoaded', function() {
             // Lắng nghe sự kiện click trên liên kết "Đăng ký ngay"
-            document.querySelector('#dangKyLink').addEventListener('click', function () {
+            document.querySelector('#dangKyLink').addEventListener('click', function() {
                 hienThiDangKy();
             });
         });
 
         // hành dộng cho nút quên mật khẩu
-        document.addEventListener('DOMContentLoaded', function () {
-            document.querySelector('#QmKhau').addEventListener('click', function (event) {
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelector('#QmKhau').addEventListener('click', function(event) {
                 event.preventDefault();
                 hienThiQuenMatKhau();
             });
 
-            document.querySelector('#quayVeDangNhap').addEventListener('click', function (event) {
+            document.querySelector('#quayVeDangNhap').addEventListener('click', function(event) {
                 event.preventDefault();
                 hienThiDangNhap();
             });
         });
 
         // hành động cho nút đăng nhập
-        document.addEventListener('DOMContentLoaded', function () {
+        document.addEventListener('DOMContentLoaded', function() {
             // Lắng nghe sự kiện click trên liên kết "Đăng nhập ngay"
-            document.querySelector('#dangNhapLink').addEventListener('click', function () {
+            document.querySelector('#dangNhapLink').addEventListener('click', function() {
                 hienThiDangNhap(); // Gọi hàm để ẩn dangKy và hiển thị dangNhap
             });
         });
 
-        document.addEventListener('DOMContentLoaded', function () {
-            document.getElementById('forgotPasswordForm').addEventListener('submit', function (event) {
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('forgotPasswordForm').addEventListener('submit', function(event) {
                 event.preventDefault(); // Ngăn chặn form submit mặc định
 
                 // Thực hiện AJAX request để xác nhận thông tin và nhận kết quả từ server
@@ -280,10 +288,10 @@ $mail = new Mailer();
 
                 var formData = new FormData(this);
 
-                fetch('./login,logout,forgot/forgot_password.php', {
-                    method: 'POST',
-                    body: formData
-                })
+                fetch('./Security/forgot_password.php', {
+                        method: 'POST',
+                        body: formData
+                    })
                     .then(response => response.text())
                     .then(data => {
                         if (data.includes('Message has been sent')) {
@@ -328,7 +336,7 @@ $mail = new Mailer();
         });
 
         // hành động chuyển sang đổi mật khẩu
-        document.getElementById("verifyOTPForm").addEventListener("submit", function (event) {
+        document.getElementById("verifyOTPForm").addEventListener("submit", function(event) {
             // Ngăn chặn form submit mặc định để thực hiện xử lý bằng JavaScript
             event.preventDefault();
 
@@ -349,7 +357,7 @@ $mail = new Mailer();
         });
 
         // hành động sau khi summit đổi mật khẩu thành công thì quay về đăng nhập
-        document.getElementById("rsPassForm").addEventListener("submit", function (event) {
+        document.getElementById("rsPassForm").addEventListener("submit", function(event) {
             // Ngăn chặn form submit mặc định để thực hiện xử lý bằng JavaScript
             event.preventDefault();
 
@@ -368,7 +376,6 @@ $mail = new Mailer();
                 timer: 2000
             });
         });
-
     </script>
 
 
