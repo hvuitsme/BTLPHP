@@ -121,6 +121,7 @@ a {
 .quantity-selector {
     display: flex;
     align-items: center;
+    justify-content: center;
     border: 2px solid #ccc;
     border-radius: 8px;
     overflow: hidden;
@@ -129,7 +130,7 @@ a {
 .quantity-input {
     background-color: #2b2c2c;
     color: white;
-    width: 20px;
+    width: 30px;
     text-align: center;
     margin: 0 10px;
     border: none;
@@ -150,8 +151,91 @@ a {
 }
 
 /* thẻ hr col-7 sp */
-.col-sm-10 {
+.col-sm-10.hr {
     padding: 0 !important;
+}
 
+/* card */
 
+.card {
+    overflow: hidden;
+    border: none;
+    /* Thêm dòng này để tắt viền của card */
+}
+
+.card img {
+    transition: transform 0.3s ease-in-out;
+}
+
+.card:hover img {
+    transform: scale(1.1);
+    /* Hiệu ứng phóng to khi hover */
+}
+
+.card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.5);
+    /* Màu nền tối mờ (đen với độ trong suốt) */
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.card:hover::before {
+    opacity: 1;
+    /* Hiển thị overlay khi hover */
+}
+
+/* card sp */
+
+.card.sp {
+    position: relative;
+    transition: background-color 0.3s ease;
+    /* Thêm hiệu ứng chuyển động cho background-color */
+}
+
+.card.sp:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+    /* Nền trắng mờ khi di chuột vào */
+}
+
+.eye-link {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-decoration: none;
+    color: inherit;
+    opacity: 0;
+    /* Ẩn icon mắt khi không hover */
+    transition: opacity 0.3s ease-in-out;
+    /* Thêm hiệu ứng chuyển động cho opacity */
+}
+
+.card.sp:hover .eye-link {
+    opacity: 1;
+    /* Hiển thị icon mắt khi hover */
+}
+
+.eye-link:hover {
+    text-decoration: underline;
+}
+
+/* Thêm hiệu ứng con mắt */
+/* @keyframes eyeBlink {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(0.8);
+    }
+} */
+.fa-eye {
+    animation: eyeBlink 1.5s infinite;
+    /* Sử dụng hiệu ứng */
 }

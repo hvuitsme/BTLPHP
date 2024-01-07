@@ -8,11 +8,16 @@
     <title>Document</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100&family=Lobster&family=Taviraj:wght@100;300&display=swap" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100&family=Lobster&family=Taviraj:wght@100;300&display=swap"
+        rel="stylesheet" />
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <style>
@@ -53,8 +58,50 @@
                 </div> -->
                 <?php
                 include 'C:/xampp/php/BAITAP/BTLPHP/db/dbconnect.php';
+                
+                // function displayProductByCode($code_sp, $conn)
+                // {
+                //     $sql = "SELECT * FROM tb_image WHERE code_sp = '$code_sp'";
+                //     $result = $conn->query($sql);
+                
+                //     if ($result->num_rows > 0) {
+                //         echo '<div class="ecommerce-gallery" data-mdb-zoom-effect="true" data-mdb-auto-height="true">';
+                //         echo '<div class="row shadow-5">';
+                //         echo '<div class="col-4">';
+                
+                //         $firstImage = true; // Khởi tạo biến trạng thái ảnh đầu tiên
+                
+                //         while ($row = $result->fetch_assoc()) {
+                //             echo '<div class="mt-1 d-flex flex-row-reverse">';
+                //             $borderClass = $firstImage ? 'border-red' : ''; // Áp dụng lớp viền nếu là ảnh đầu tiên
+                //             echo '<img src="data:image/jpeg;base64,' . base64_encode($row['image_sp']) . '" alt="' . $row['name_sp'] . '" class="gallery-thumbnail rounded w-50 ' . $borderClass . '" />';
+                //             echo '</div>';
+                //             $firstImage = false; // Cập nhật biến sau khi hiển thị ảnh đầu tiên
+                //         }
+                
+                //         echo '</div>';
+                //         echo '<div class="col-8 mb-1">';
+                //         echo '<div class="lightbox">';
+                //         $result->data_seek(0); // Đặt lại con trỏ kết quả về đầu cho ảnh chính
+                //         $row = $result->fetch_assoc();
+                //         echo '<img src="data:image/jpeg;base64,' . base64_encode($row['image_sp']) . '" alt="' . $row['name_sp'] . '" class="ecommerce-gallery-main-img active rounded" />';
+                //         echo '</div>';
+                //         echo '</div>';
+                //         echo '</div>';
+                //         echo '</div>';
+                //     } else {
+                //         echo 'Sản phẩm không tồn tại.';
+                //     }
+                // }
+                
+                // $code_sp = "BM1";
+                // displayProductByCode($code_sp, $conn);
+                
+                // // Close connection
+                // $conn->close();
 
-                function displayProductByCode($code_sp, $conn)
+                // Function to display product details
+                function displayProductDetails($code_sp, $conn)
                 {
                     $sql = "SELECT * FROM tb_image WHERE code_sp = '$code_sp'";
                     $result = $conn->query($sql);
@@ -64,20 +111,20 @@
                         echo '<div class="row shadow-5">';
                         echo '<div class="col-4">';
 
-                        $firstImage = true; // Variable to track the first image
+                        $firstImage = true;
 
                         while ($row = $result->fetch_assoc()) {
                             echo '<div class="mt-1 d-flex flex-row-reverse">';
-                            $borderClass = $firstImage ? 'border-red' : ''; // Apply border class conditionally
-                            echo '<img src="data:image/jpeg;base64,' . base64_encode($row['image_sp']) . '" alt=""' . $row['name_sp'] . '" class="gallery-thumbnail rounded w-50 ' . $borderClass . '" />';
+                            $borderClass = $firstImage ? 'border-red' : '';
+                            echo '<img src="data:image/jpeg;base64,' . base64_encode($row['image_sp']) . '" alt="' . $row['name_sp'] . '" class="gallery-thumbnail rounded w-50 ' . $borderClass . '" />';
                             echo '</div>';
-                            $firstImage = false; // Update the variable after the first image
+                            $firstImage = false;
                         }
 
                         echo '</div>';
                         echo '<div class="col-8 mb-1">';
                         echo '<div class="lightbox">';
-                        $result->data_seek(0); // Reset the result pointer to the beginning for the main image
+                        $result->data_seek(0);
                         $row = $result->fetch_assoc();
                         echo '<img src="data:image/jpeg;base64,' . base64_encode($row['image_sp']) . '" alt="' . $row['name_sp'] . '" class="ecommerce-gallery-main-img active rounded" />';
                         echo '</div>';
@@ -85,31 +132,32 @@
                         echo '</div>';
                         echo '</div>';
                     } else {
-                        echo 'Product not found.';
+                        echo 'Sản phẩm không tồn tại.';
                     }
                 }
 
-                // ví trí thêm code sản phẩm
-                $code_sp = "BM1";
-                displayProductByCode($code_sp, $conn);
+                // Get product code from the URL parameter
+                $code_sp = isset($_GET['code']) ? $_GET['code'] : '';
+
+                // Display product details based on the product code
+                displayProductDetails($code_sp, $conn);
 
                 // Close connection
                 $conn->close();
                 ?>
 
-
                 <div class="row">
                     <div class="col-sm-2">
 
                     </div>
-                    <div class="col-sm-10 ">
+                    <div class="col-sm-10 hr">
                         <hr>
                     </div>
                 </div>
             </div>
             <div class="col-sm-5 py-4">
-                <div class="" style="margin-left: 50px; margin-right: 50px" ;>    
-                <p class="pt-3">AZALEA SHOP</p>
+                <div class="" style="margin-left: 50px; margin-right: 50px" ;>
+                    <p class="pt-3">AZALEA SHOP</p>
                     <p>VL38 + T</p>
                     <p><del>71.749.000₫</del></p>
                     <p>7.749.000₫</p>
@@ -141,6 +189,9 @@
                         </div>
                     </div>
                     <div class="row pt-5" style="padding-left: 12px; padding-right: 12px;">
+                        <button type="button" class="btn btn-outline-light">Thêm vào giỏ hàng</button>
+                    </div>
+                    <div class="row pt-2" style="padding-left: 12px; padding-right: 12px;">
                         <button type="button" class="btn btn-outline-light">Mua ngay</button>
                     </div>
                 </div>
@@ -154,6 +205,56 @@
     <hr>
     <div class="container">
         <h3 class="text-center" style="padding-top: 80px; padding-bottom: 80px;">BẠN CÓ THỂ THÍCH</h3>
+
+        <div class="container">
+            <div class="row">
+                <?php
+                include 'C:/xampp/php/BAITAP/BTLPHP/db/dbconnect.php';
+
+                // Sửa câu truy vấn SQL để lấy ngẫu nhiên 8 dòng
+                $sql = "SELECT tb_image.id_sp, tb_image.name_sp, tb_image.price, tb_image.image_sp, tb_image.code_sp, MAX(price_sp.price) AS max_price FROM tb_image JOIN price_sp ON tb_image.code_sp = price_sp.code_sp GROUP BY tb_image.code_sp ORDER BY RAND() LIMIT 4;";
+                $result = $conn->query($sql);
+
+                if ($result->num_rows > 0) {
+                    // Duyệt qua từng dòng dữ liệu
+                    while ($row = $result->fetch_assoc()) {
+                        ?>
+                        <div class="col-sm-3">
+                            <div class="card sp" style="width: 100%" onmouseover="addHoverEffect(this)"
+                                onmouseout="removeHoverEffect(this)" onclick="redirectToAnotherPage()">
+                                <img class="h-100" src="data:image/jpeg;base64,<?= base64_encode($row['image_sp']) ?>" alt="" />
+                                <a href="#" class="eye-link">
+                                    <i class="fa-regular fa-eye"></i>
+                                </a>
+                            </div>
+
+                            <div class="d-flex justify-content-center pt-3">
+                                <p class="m-0 text-center">
+                                    <?= $row['name_sp'] ?><br>
+                                    <?= $row['code_sp'] ?><br>
+                                    <?= '<span style="color: #dc3545;">' . number_format($row['price']) . '&#8363;</span>' ?>
+                                </p>
+                            </div>
+
+                            <div class="d-flex justify-content-center pt-3">
+                                <button type="button" class="btn btn-danger">
+                                    Thêm vào giỏ hàng
+                                </button>
+                            </div>
+                        </div>
+                        <?php
+                    }
+                } else {
+                    echo "Không có dữ liệu";
+                }
+
+                // Đóng kết nối
+                $conn->close();
+                ?>
+            </div>
+        </div>
+
+
     </div>
 
     <!-- Bootstrap JS and Popper.js -->
@@ -162,6 +263,45 @@
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 
     <!-- Custom JavaScript -->
+
+    <script>
+        $(document).ready(function () {
+            // Kiểm tra kích thước màn hình và thêm/xóa lớp CSS
+            function checkScreenSize() {
+                var screenSize =
+                    window.innerWidth ||
+                    document.documentElement.clientWidth ||
+                    document.body.clientWidth;
+
+                // Nếu kích thước màn hình là 768px hoặc nhỏ hơn, thêm lớp visible-xs
+                if (screenSize <= 768) {
+                    $(".menu-toggle-btn").addClass("visible-xs");
+                } else {
+                    $(".menu-toggle-btn").removeClass("visible-xs");
+                }
+            }
+
+            // Gọi hàm kiểm tra khi trang web tải và khi thay đổi kích thước màn hình
+            $(window).on("load resize", function () {
+                checkScreenSize();
+            });
+        });
+
+        function redirectToAnotherPage() {
+            // Thực hiện chuyển hướng khi nhấp vào thẻ
+            window.location.href = "https://github.com/hvuitsme";
+        }
+
+        function addHoverEffect(card) {
+            // Thực hiện các thay đổi khi di chuột vào
+            card.style.boxShadow = "0 0 10px rgba(0, 0, 0, 0.3)";
+        }
+
+        function removeHoverEffect(card) {
+            // Thực hiện các thay đổi khi di chuột ra
+            card.style.boxShadow = "none";
+        }
+    </script>
 
     <!-- quantity Selector -->
     <script>
@@ -177,8 +317,6 @@
         }
     </script>
 
-
-
     <!-- static effect -->
     <!-- <script>
         $(document).ready(function () {
@@ -193,8 +331,8 @@
 
     <!-- orther effects -->
     <script>
-        $(document).ready(function() {
-            $('.gallery-thumbnail').click(function() {
+        $(document).ready(function () {
+            $('.gallery-thumbnail').click(function () {
                 $('.gallery-thumbnail').removeClass('active');
                 $(this).addClass('active');
                 var imgSrc = $(this).attr('src');
@@ -204,8 +342,8 @@
                 //     $('.ecommerce-gallery-main-img').css('transform', 'scale(1)');
                 // }, 300);
 
-                $('.ecommerce-gallery-main-img').css('filter', 'blur(3px)'); // Điều chỉnh giá trị theo yêu cầu của bạn
-                setTimeout(function() {
+                $('.ecommerce-gallery-main-img').css('filter', 'blur(1px)'); // Điều chỉnh giá trị theo yêu cầu của bạn
+                setTimeout(function () {
                     $('.ecommerce-gallery-main-img').css('filter', 'blur(0)');
                 }, 300);
             });
