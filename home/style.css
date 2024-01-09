@@ -72,6 +72,91 @@ p {
     line-height: 32.16px;
 } */
 
+/* phần sidebar */
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: -450px;
+    width: 450px;
+    height: 100%;
+    background: #fff;
+    z-index: 1001;
+    transition: right 0.3s ease;
+    overflow-y: auto;
+}
+
+.sidebar a {
+    display: block;
+    padding: 15px;
+    text-decoration: none;
+    color: black;
+}
+
+.sidebar a:hover {
+    background-color: #f8f9fa;
+}
+
+.close-btn {
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 15px;
+}
+
+.no-scroll {
+    overflow: hidden;
+}
+
+/* hết sidebar */
+
+/* phần quantity selector */
+
+.quantity-selector {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.quantity-input {
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    width: 30px;
+    text-align: center;
+    margin: 0 10px;
+    border: none;
+    border-radius: 0;
+}
+
+.quantity-button {
+    cursor: pointer;
+    font-size: 18px;
+    user-select: none;
+    padding: 5px 10px;
+    border: none;
+    background-color: #ffffff;
+}
+
+.quantity-button:hover {
+    background-color: #c3d0d0;
+}
+
+/* hết phần quantity selector */
+
 .card {
     overflow: hidden;
     border: none;

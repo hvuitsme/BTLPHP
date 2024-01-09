@@ -61,9 +61,9 @@
                 <div id="wid_1524125584_64lbu0ohb" class="">
                   <ul class="navbar-nav">
                     <li class="nav-item">
-                      <a class="nav-link" ng-click="handleToCart()">
+                      <a class="nav-link" id="openSidebar">
                         <i class="fa fa-shopping-cart"></i>
-                        <span class="cart-count" ng-bind="widget.items_in_cart">0</span>
+                        <span class="cart-count">0</span>
                       </a>
                     </li>
                     <li class="nav-item">
@@ -242,6 +242,45 @@
     </div>
   </header>
 
+  <div class="overlay" id="overlay"></div>
+  <div class="sidebar" id="sidebar">
+    <div class="container" style="padding-top: 15px;">
+      <span style="font-size: 23px;">
+        CART
+      </span>
+    </div>
+    <div class="close-btn" id="closeSidebar">
+      <i class="fa-solid fa-times"></i>
+    </div>
+    <hr>
+    <!-- sản phẩm -->
+    <div class="container pt-2">
+      <div class="row">
+        <div class="col-sm-5">
+          <img class="rounded-2" src="../img/feature-image.jpg" style="height: 200px;" alt="">
+        </div>
+        <div class="col-sm-7">
+          <div class="quantity-container">
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="quantity-selector">
+                  <div class="quantity-button" onclick="decreaseQuantity()">-</div>
+                  <input type="text" class="quantity-input" value="1" readonly>
+                  <div class="quantity-button" onclick="increaseQuantity()">+</div>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="row">
+                  <span class="remove-button text-center">Remove</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <section class="py-4">
     <div class="container type-categories">
       <div class="row">
@@ -251,7 +290,7 @@
               <img
                 src="https://lavitta.vn/cdn/shop/files/z5009401811761_77bf56a6cf6eba0dbfd6a2fcc66288d7_600x.jpg?v=1703525193"
                 class="card-img-top" alt="mau1" />
-              <div class="overlay">
+              <div class="overlay-content">
                 <div class="content">
                   <p class="text-black">VÁY CƯỚI</p>
                   <!-- <a href="#" class="btn"><button class="btn btn-danger" type="submit">Button</button></a> -->
@@ -267,7 +306,7 @@
               <img
                 src="https://lavitta.vn/cdn/shop/files/z5009401802593_ac3db59bda6187bff17af1b8bbcfbbc5_600x.jpg?v=1703525097"
                 class="card-img-top" alt="mau2" />
-              <div class="overlay">
+              <div class="overlay-content">
                 <div class="content">
                   <p class="text-black">PHỤ KIỆN</p>
                   <!-- <a href="#" class="btn"><button class="btn btn-danger" type="submit">Button</button></a> -->
@@ -283,7 +322,7 @@
               <img
                 src="https://lavitta.vn/cdn/shop/files/z5009401283292_9fe878edd75c243caa8d1b1ed6927490_600x.jpg?v=1703524257"
                 class="card-img-top" alt="mau3" />
-              <div class="overlay">
+              <div class="overlay-content">
                 <div class="content">
                   <p class="text-black">BỘ SƯU TẬP ĐỘC QUYỀN</p>
                   <!-- <a href="#" class="btn"><button class="btn btn-danger" type="submit">Button</button></a> -->
@@ -338,7 +377,7 @@
       include 'C:/xampp/php/BAITAP/BTLPHP/db/dbconnect.php';
 
       // Sửa câu truy vấn SQL để lấy ngẫu nhiên 8 dòng
-      $sql = "SELECT tb_image.id_sp, tb_image.name_sp, tb_image.price, tb_image.image_sp, tb_image.code_sp, MAX(price_sp.price) AS max_price FROM tb_image JOIN price_sp ON tb_image.code_sp = price_sp.code_sp GROUP BY tb_image.code_sp ORDER BY RAND() LIMIT 8;";
+      $sql = "SELECT t1.`name_sp`, t1.`image_sp`, t1.`price`, t1.`code_sp` FROM `tb_image` t1 JOIN (SELECT `code_sp`, MAX(`id_sp`) AS max_id_sp FROM `tb_image` GROUP BY `code_sp`) t2 ON t1.`code_sp` = t2.`code_sp` AND t1.`id_sp` = t2.`max_id_sp` WHERE t1.`code_sp` LIKE '%BM%' OR t1.`code_sp` LIKE '%DC%' ORDER BY RAND() LIMIT 8;";
       $result = $conn->query($sql);
 
       if ($result->num_rows > 0) {
@@ -347,7 +386,7 @@
           ?>
           <div class="col-sm-3">
             <div class="card sp" style="width: 100%" onmouseover="addHoverEffect(this)" onmouseout="removeHoverEffect(this)"
-            onclick="redirectToProductDetails('<?= $row['code_sp'] ?>')">
+              onclick="redirectToProductDetails('<?= $row['code_sp'] ?>')">
               <img class="h-100" src="data:image/jpeg;base64,<?= base64_encode($row['image_sp']) ?>" alt="" />
               <a href="#" class="eye-link">
                 <i class="fa-regular fa-eye"></i>
@@ -617,6 +656,42 @@
     function removeHoverEffect(card) {
       // Thực hiện các thay đổi khi di chuột ra
       card.style.boxShadow = "none";
+    }
+  </script>
+
+  <!-- phần sidebar -->
+
+  <script>
+    document.getElementById('openSidebar').addEventListener('click', function () {
+      document.getElementById('overlay').style.display = 'block';
+      document.getElementById('sidebar').style.right = '0';
+      document.body.classList.add('no-scroll');
+    });
+
+    document.getElementById('closeSidebar').addEventListener('click', function () {
+      document.getElementById('overlay').style.display = 'none';
+      document.getElementById('sidebar').style.right = '-450px';
+      document.body.classList.remove('no-scroll');
+    });
+
+    document.getElementById('overlay').addEventListener('click', function () {
+      document.getElementById('overlay').style.display = 'none';
+      document.getElementById('sidebar').style.right = '-450px';
+      document.body.classList.remove('no-scroll');
+    });
+  </script>
+
+  <!-- quantity Selector -->
+  <script>
+    function increaseQuantity() {
+      var input = document.querySelector('.quantity-input');
+      input.value = parseInt(input.value) + 1;
+    }
+
+    function decreaseQuantity() {
+      var input = document.querySelector('.quantity-input');
+      var value = parseInt(input.value) - 1;
+      input.value = value > 0 ? value : 1;
     }
   </script>
 
