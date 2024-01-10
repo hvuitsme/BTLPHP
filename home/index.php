@@ -244,39 +244,48 @@
   <div class="overlay" id="overlay"></div>
   <div class="sidebar" id="sidebar">
     <div class="container" style="padding-top: 15px;">
-      <span style="font-size: 23px;">
-        CART
-      </span>
+      <span style="font-size: 23px;">CART</span>
     </div>
     <div class="close-btn" id="closeSidebar">
       <i class="fa-solid fa-times"></i>
     </div>
     <hr>
-    <!-- sản phẩm -->
+    <!-- sản phẩm trong giỏ hàng -->
     <div class="container pt-2">
-      <!-- <div class="row">
-        <div class="col-sm-5">
-          <img class="rounded-2" src="../img/feature-image.jpg" style="height: 200px;" alt="">
-        </div>
-        <div class="col-sm-7">
-          <div class="quantity-container">
-            <div class="row">
-              <div class="col-sm-6">
-                <div class="quantity-selector">
-                  <div class="quantity-button" onclick="decreaseQuantity()">-</div>
-                  <input type="text" class="quantity-input" value="1" readonly>
-                  <div class="quantity-button" onclick="increaseQuantity()">+</div>
-                </div>
-              </div>
-              <div class="col-sm-6">
+      <?php
+      // Kiểm tra xem giỏ hàng có sản phẩm hay không
+      session_start();
+      if (isset($_SESSION['cart']) && !empty($_SESSION['cart'])) {
+        foreach ($_SESSION['cart'] as $cart_item) {
+          ?>
+          <div class="row">
+            <div class="col-sm-5">
+              <img class="rounded-2" src="data:image/jpeg;base64,<?= $cart_item['image'] ?>" style="height: 200px;" alt="">
+            </div>
+            <div class="col-sm-7">
+              <div class="quantity-container">
                 <div class="row">
-                  <span class="remove-button text-center">Remove</span>
+                  <div class="col-sm-6">
+                    <div class="quantity-selector">
+                      <!-- Các nút tăng giảm số lượng -->
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="row">
+                      <span class="remove-button text-center">Remove</span>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </div> -->
+          <?php
+        }
+      } else {
+        // Hiển thị thông báo nếu giỏ hàng trống
+        echo "Giỏ hàng trống.";
+      }
+      ?>
     </div>
   </div>
 
