@@ -1,0 +1,739 @@
+body {
+    background-color: #2b2c2c !important;
+}
+
+img.logo-link {
+    filter: brightness(0) invert(1);
+}
+
+p {
+    color: white;
+}
+
+/* Thay đổi màu chữ cho tất cả các phần tử text trong header thành màu trắng */
+#section-header {
+    color: #fff;
+    /* Màu trắng */
+}
+
+#section-header a {
+    color: #fff;
+    /* Màu trắng cho các liên kết */
+}
+
+#section-header a:hover {
+    color: #ccc;
+    /* Màu chữ khi di chuột qua các liên kết */
+}
+
+#section-header .fa {
+    color: #fff;
+    /* Màu trắng cho các biểu tượng FontAwesome */
+}
+
+/* Thay đổi màu chữ cho tất cả các phần tử text trong footer thành màu trắng */
+#section-footer {
+    color: #fff;
+    /* Màu trắng */
+}
+
+#section-footer a {
+    color: #fff;
+    /* Màu trắng cho các liên kết */
+}
+
+#section-footer a:hover {
+    color: #ccc;
+    /* Màu chữ khi di chuột qua các liên kết */
+}
+
+#section-footer .fa {
+    color: #fff;
+    /* Màu trắng cho các biểu tượng FontAwesome */
+}
+
+/* Giữ màu xanh cho liên kết Hvuitsme */
+#section-footer .author {
+    color: rgb(15, 231, 177);
+    /* Màu xanh */
+}
+
+/* Giữ màu xanh cho liên kết Privacy Policy */
+#section-footer .policy {
+    color: rgb(15, 231, 177);
+    /* Màu xanh */
+}
+
+/* Thay đổi kích thước của biểu tượng FontAwesome có class .payment trong footer */
+/* #section-footer .payment .fa {
+    font-size: 32.16px;
+    width: 25px;
+    height: 32.16px;
+    line-height: 32.16px;
+} */
+
+/* phần sidebar */
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: -450px;
+    width: 450px;
+    height: 100%;
+    background: #fff;
+    z-index: 1001;
+    transition: right 0.5s ease;
+    overflow-y: auto;
+}
+
+.sidebar a {
+    display: block;
+    padding: 15px;
+    text-decoration: none;
+    color: black;
+}
+
+.sidebar a:hover {
+    background-color: #f8f9fa;
+}
+
+.close-btn {
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 15px;
+}
+
+.no-scroll {
+    overflow: hidden;
+}
+
+/* hết sidebar */
+
+/* phần quantity selector */
+
+.quantity-selector {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.quantity-input {
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    width: 30px;
+    text-align: center;
+    margin: 0 10px;
+    border: none;
+    border-radius: 0;
+}
+
+.quantity-button {
+    cursor: pointer;
+    font-size: 18px;
+    user-select: none;
+    padding: 5px 10px;
+    border: none;
+    background-color: #ffffff;
+}
+
+.quantity-button:hover {
+    background-color: #94beaf;
+}
+
+/* hết phần quantity selector */
+
+.card {
+    overflow: hidden;
+    border: none;
+    /* Thêm dòng này để tắt viền của card */
+}
+
+.card img {
+    transition: transform 0.3s ease-in-out;
+}
+
+.card:hover img {
+    transform: scale(1.1);
+    /* Hiệu ứng phóng to khi hover */
+}
+
+.card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.5);
+    /* Màu nền tối mờ (đen với độ trong suốt) */
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.card:hover::before {
+    opacity: 1;
+    /* Hiển thị overlay khi hover */
+}
+
+/* .card.sp {
+    position: relative;
+    transition: background-color 0.3s ease;
+}
+
+.card.sp:hover {
+}
+
+.eye-link {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-decoration: none;
+    color: inherit;
+}
+
+.eye-link:hover {
+    text-decoration: underline;
+}
+
+Thêm hiệu ứng con mắt
+@keyframes eyeBlink {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(0.8);
+    }
+}
+.fa-eye {
+    animation: eyeBlink 1.5s infinite;
+} */
+
+.card.sp {
+    position: relative;
+    transition: background-color 0.3s ease;
+    /* Thêm hiệu ứng chuyển động cho background-color */
+}
+
+.card.sp:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+    /* Nền trắng mờ khi di chuột vào */
+}
+
+.eye-link {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-decoration: none;
+    color: inherit;
+    opacity: 0;
+    /* Ẩn icon mắt khi không hover */
+    transition: opacity 0.3s ease-in-out;
+    /* Thêm hiệu ứng chuyển động cho opacity */
+}
+
+.card.sp:hover .eye-link {
+    opacity: 1;
+    /* Hiển thị icon mắt khi hover */
+}
+
+.eye-link:hover {
+    text-decoration: underline;
+}
+
+/* Thêm hiệu ứng con mắt */
+/* @keyframes eyeBlink {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(0.8);
+    }
+} */
+.fa-eye {
+    animation: eyeBlink 1.5s infinite;
+    /* Sử dụng hiệu ứng */
+}
+
+
+.content {
+    position: absolute;
+    bottom: 20px;
+    /* Đặt khoảng cách từ chân ảnh xuống dưới */
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    z-index: 2;
+    text-align: center;
+    /* Căn giữa nội dung */
+}
+
+.content p {
+    margin: 0 !important;
+    /* Đặt padding của thẻ p là 0 */
+    font-size: 30px;
+}
+
+.btn {
+    background-color: #dc3545;
+    color: white;
+    /* padding: 10px 20px; */
+    text-decoration: none;
+    display: inline-block;
+}
+
+.text-color-black.btn-primary{
+    background-color: white !important;
+    border-color: black !important;
+}
+
+.text-color-black.btn-primary:hover{
+    background-color: rgb(0, 0, 0) !important;
+    border-color: rgb(255, 255, 255) !important;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+a.menu-link.menu-link-level-1.moto-link {
+    text-decoration: none;
+}
+
+a.moto-link {
+    text-decoration: none;
+}
+
+/* a.moto-link.payment{
+    padding: 5px;
+} */
+
+p.moto-text_system_1 {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+}
+
+p.moto-text_system_2 {
+    display: flex;
+    padding: 0;
+    margin: 0;
+}
+
+p.moto-text_system_8 {
+    padding-bottom: 110px;
+}
+
+h1, h2, h2.text-dark{
+    color: white !important;
+}
+
+ul,
+ol {
+    list-style: none;
+    color: white;
+}
+
+ul.menu-list.menu-list_horizontal {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+}
+
+li.moto-widget-menu-item {
+    padding: 10px;
+}
+
+ul.social-links-extended__list {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+}
+
+li.social-links-extended__item {
+    padding: 10px;
+}
+
+i.fa-brands.payment {
+    padding-left: 3px;
+    padding-right: 3px;
+}
+
+.menu-toggle-btn {
+    display: none;
+}
+
+input.search-form_input {
+    background-color: #2b2c2c;
+    border-color: rgba(255, 255, 255, 0.5);
+    /* Sử dụng một màu độ tương phản để tạo hiệu ứng */
+    border-radius: 5px;
+    border-width: 1px;
+    /* Độ dày của đường viền */
+}
+
+/* Ẩn danh sách con ban đầu */
+.menu-item-has-submenu>.menu-sublist {
+    display: none;
+}
+
+/* Hiển thị danh sách con khi hover */
+.menu-item-has-submenu:hover>.menu-sublist {
+    display: block;
+}
+
+/* Thiết lập kiểu dáng cho danh sách con */
+.menu-sublist {
+    position: absolute;
+    background-color: #000000;
+    /* Màu nền của dropdown */
+    border: 1px solid #000000;
+    /* Viền của dropdown */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Đổ bóng cho dropdown */
+}
+
+.menu-container {
+    color: #e6e5db;
+    /* Màu chữ cho menu */
+}
+
+.menu-sublist {
+    display: none;
+    position: absolute;
+    background-color: #e6e5dbba;
+    /* Màu nền khi hover */
+    padding: 10px;
+}
+
+.menu-item-has-submenu:hover .menu-sublist {
+    display: block;
+    border: 0;
+}
+
+
+.text-banner.row-banner {
+    padding-top: 200px;
+    padding-bottom: 200px;
+}
+
+@media (max-width: 479px) {
+    .text-banner.row-banner {}
+}
+
+@media (max-width: 767px) {
+    .text-banner.row-banner {}
+}
+
+@media (max-width: 1039px) {
+    .text-banner.row-banner {
+        padding-top: 170px;
+        padding-bottom: 170px;
+    }
+}
+
+
+.moto-text_system_3 {
+    font-weight: 500;
+    font-style: normal;
+    font-family: 'Taviraj', serif;
+    color: #e6e5db;
+    font-size: 89px;
+    line-height: 1.1;
+    letter-spacing: 0px;
+}
+
+@media (max-width: 479px) {
+    .moto-text_system_3 {
+        font-size: 30px;
+        line-height: 1.1;
+        letter-spacing: 0px;
+    }
+}
+
+@media (max-width: 767px) {
+    .moto-text_system_3 {
+        font-size: 40px;
+        line-height: 1.1;
+        letter-spacing: 0px;
+    }
+}
+
+@media (max-width: 1039px) {
+    .moto-text_system_3 {
+        font-size: 50px;
+        line-height: 1.1;
+        letter-spacing: 0px;
+    }
+}
+
+.moto-text_system_4 {
+    font-weight: 500;
+    font-style: normal;
+    font-family: 'Taviraj', serif;
+    color: #e6e5db;
+    font-size: 89px;
+    line-height: 1.1;
+    letter-spacing: 0px;
+}
+
+.moto-text_system_6 {
+    font-weight: 300;
+    font-style: normal;
+    font-family: 'Taviraj', serif;
+    color: #e6e5db;
+    font-size: 47px;
+    line-height: 1.1;
+    letter-spacing: 0px;
+}
+
+@media (max-width: 479px) {
+    .moto-text_system_6 {
+        font-size: 24px;
+        line-height: 1.1;
+        letter-spacing: 0px;
+    }
+}
+
+@media (max-width: 767px) {
+    .moto-text_system_6 {
+        font-size: 26px;
+        line-height: 1.1;
+        letter-spacing: 0px;
+    }
+}
+
+@media (max-width: 1039px) {
+    .moto-text_system_6 {
+        font-size: 20px;
+        line-height: 1.1;
+        letter-spacing: 0px;
+    }
+}
+
+.moto-text_225 {
+    font-weight: 300;
+    font-style: normal;
+    font-family: 'Lato', sans-serif;
+    color: #e6e5db;
+    font-size: 26px;
+    line-height: 1.4;
+    letter-spacing: 0px;
+}
+
+
+.moto-widget-menu-sublist {
+    background-color: #2b2c2c !important;
+    border: none;
+}
+
+.moto-widget-menu-sublist a {
+    color: #fff;
+    /* Màu chữ trắng */
+}
+
+.logo-link {
+    display: inline-block;
+    font-size: 2em;
+    /* Điều chỉnh kích thước chữ dựa trên kích thước em */
+    line-height: 1;
+    /* Đảm bảo chiều cao dòng là 1 để tránh độ chệch */
+    text-decoration: none;
+    /* Loại bỏ gạch chân mặc định */
+    color: transparent;
+    /* Ẩn màu chữ để tránh hiển thị chữ */
+    position: relative;
+    /* Cho phép xác định kích thước chữ dựa trên kích thước của phần tử cha */
+}
+
+.logo-link::before {
+    position: absolute;
+    width: 100%;
+    /* 100% chiều rộng của phần tử cha */
+    height: 100%;
+    /* 100% chiều cao của phần tử cha */
+    z-index: -1;
+    /* Đặt sâu dưới văn bản */
+}
+
+.search-form_label {
+    position: relative;
+}
+
+.search-icon {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    /* Điều chỉnh khoảng cách từ icon đến phải */
+    transform: translateY(-50%);
+    color: #999;
+    /* Đổi màu sắc nếu cần */
+}
+
+.search-form_submit,
+.search-submit-icon::before {
+    display: none;
+}
+
+/* riêng phần này của icon user */
+#user-info {
+    display: none;
+    position: absolute;
+    background-color: #e6e5dbba;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    /* top: 59%; */
+    /* Đưa về giữa theo chiều dọc */
+    /* left: 50%; */
+    /* Đưa về giữa theo chiều ngang */
+    transform: translate(-40%, 0%);
+    /* Dịch chuyển về giữa */
+}
+
+
+#user-icon:hover+#user-info,
+#user-info:hover {
+    display: block;
+}
+
+#user-icon {
+    position: relative;
+    cursor: pointer;
+}
+
+.fa-user {
+    /* Thêm kiểu dáng cho icon fa-user */
+    color: #333;
+}
+
+.c-rounded {
+    border-radius: 10px;
+    /* Đặt giá trị này tùy thuộc vào độ cong mong muốn */
+}
+
+#logOutbtn {
+    border-color: #e5d9cf;
+    color: black;
+}
+
+#logOutbtn:hover {
+    border-color: #e5d9cf;
+    background-color: #e5d9cf;
+    color: white;
+}
+
+
+@media (max-width: 768px) {
+    .moto-widget-menu-toggle-btn.visible-xs {
+        display: block;
+    }
+}
+
+.banner-img.banner1 {
+    background-image: url('../img/Untitled-1.png');
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    /* Chiều rộng là 100% của cha hoặc phần tử chứa */
+    height: 800px;
+    /* Đặt chiều cao mong muốn, bạn có thể thay đổi giá trị này */
+}
+
+/* Cho điều kiện max-width: 479px */
+@media (max-width: 479px) {
+    .banner-img.banner1 {
+        max-height: 200px;
+        /* Sử dụng max-height thay vì height */
+        /* Đặt chiều cao mong muốn cho màn hình nhỏ */
+    }
+}
+
+/* Cho điều kiện max-width: 767px */
+@media (max-width: 767px) {
+    .banner-img.banner1 {
+        max-height: 500px;
+        /* Sử dụng max-height thay vì height */
+        /* Đặt chiều cao mong muốn cho màn hình vừa */
+    }
+}
+
+/* Cho điều kiện max-width: 1039px */
+@media (max-width: 1039px) {
+    .banner-img.banner1 {
+        height: 600px;
+        /* Đặt chiều cao mong muốn cho màn hình lớn hơn */
+    }
+}
+
+.banner-img.banner2 {
+    background-image: url('../img/Untitled-2.png') !important;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    /* Chiều rộng là 100% của cha hoặc phần tử chứa */
+    height: 800px;
+    /* Đặt chiều cao mong muốn, bạn có thể thay đổi giá trị này */
+}
+
+/* Cho điều kiện max-width: 479px */
+@media (max-width: 479px) {
+    .banner-img.banner2 {
+        max-height: 200px;
+        /* Sử dụng max-height thay vì height */
+        /* Đặt chiều cao mong muốn cho màn hình nhỏ */
+    }
+}
+
+/* Cho điều kiện max-width: 767px */
+@media (max-width: 767px) {
+    .banner-img.banner2 {
+        max-height: 500px;
+        /* Sử dụng max-height thay vì height */
+        /* Đặt chiều cao mong muốn cho màn hình vừa */
+    }
+}
+
+/* Cho điều kiện max-width: 1039px */
+@media (max-width: 1039px) {
+    .banner-img.banner2 {
+        height: 600px;
+        /* Đặt chiều cao mong muốn cho màn hình lớn hơn */
+    }
+}
+
+.col-sm-3 {
+    padding-bottom: 22px;
+}
+
+.col-sm-12.banner2 {
+    padding-top: 285px;
+    padding-bottom: 285px;
+}
