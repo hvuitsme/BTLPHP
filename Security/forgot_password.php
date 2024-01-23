@@ -65,7 +65,7 @@ function sendOTPByEmail($content, $email)
         $mailer->Host = 'smtp.gmail.com'; // Set the SMTP server to send through
         $mailer->SMTPAuth = true; // Enable SMTP authentication
         $mailer->Username = 'hvuits.me@gmail.com'; // SMTP username
-        $mailer->Password = 'qavz lrkp pcmu xwjj'; // SMTP password
+        $mailer->Password = 'raji uczq askr bdmj'; // SMTP password
         $mailer->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS; // Enable TLS encryption
         $mailer->Port = 587; // TCP port to connect to
 

@@ -160,7 +160,7 @@ session_start();
                         <input type="hidden" name="forgotEmail" value="<?php echo isset($_POST['forgotEmail']) ? $_POST['forgotEmail'] : ''; ?>">
 
                         <?php
-                        include "C:/xampp/php/BAITAP/BTLPHP/db/dbconnect.php";
+                        include "C:/xampp/php/BAITAP/BTLPHP1/db/dbconnect.php";
                         $forgotUser = $_SESSION['forgotPasswordUser'];
                         $forgotEmail = $_SESSION['forgotPasswordEmail'];
 
