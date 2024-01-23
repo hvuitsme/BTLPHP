@@ -1,0 +1,172 @@
+body {
+  background-color: #2b2c2c !important;
+  color: white !important;
+}
+
+p{
+  line-height: 28px;
+}
+
+span{
+  color: white;
+}
+
+/* Hiệu ứng hover */
+span:hover {
+  color: #dc3545;
+}
+
+hr.custom-hr {
+  width: 5%;
+  height: 5px;
+  background-color: #dc3545;
+  border: none;
+  margin-top: 0;
+  opacity: 100%;
+}
+
+a{
+  text-decoration: none !important;
+  padding: 0;
+  height: 28px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+/* tắt dấu chấm đầu thẻ li */
+/* ul.list-unstyled {
+  list-style-type: none;
+} */
+
+li.li-cate {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+ol.breadcrumb {
+  margin: 0;
+}
+
+span.shop-items{
+  color: #dc3545 !important;
+}
+
+.breadcrumb-web {
+  background-color: #121212 !important;
+}
+
+.breadcrumb-item.active {
+  color: #dc3545 !important;
+}
+
+.breadcrumb-item a {
+  color: white !important;
+  text-decoration: none !important;
+}
+
+.breadcrumb-item.active::before {
+  color: white !important;
+}
+
+.card {
+  overflow: hidden;
+  border: none;
+  /* Thêm dòng này để tắt viền của card */
+}
+
+.card img {
+  transition: transform 0.3s ease-in-out;
+}
+
+.card:hover img {
+  transform: scale(1.1);
+  /* Hiệu ứng phóng to khi hover */
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.5);
+  /* Màu nền tối mờ (đen với độ trong suốt) */
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.card:hover::before {
+  opacity: 1;
+  /* Hiển thị overlay khi hover */
+}
+
+.card.sp {
+  position: relative;
+  transition: background-color 0.3s ease; /* Thêm hiệu ứng chuyển động cho background-color */
+}
+
+.card.sp:hover {
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.8
+  ); /* Nền trắng mờ khi di chuột vào */
+}
+
+.eye-link {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-decoration: none;
+  color: inherit;
+  opacity: 0; /* Ẩn icon mắt khi không hover */
+  transition: opacity 0.3s ease-in-out; /* Thêm hiệu ứng chuyển động cho opacity */
+}
+
+.card.sp:hover .eye-link {
+  opacity: 1; /* Hiển thị icon mắt khi hover */
+}
+
+.eye-link:hover {
+  text-decoration: underline;
+}
+
+/* Thêm hiệu ứng con mắt */
+/* @keyframes eyeBlink {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(0.8);
+    }
+} */
+.fa-eye {
+  animation: eyeBlink 1.5s infinite; /* Sử dụng hiệu ứng */
+}
+
+.content {
+  position: absolute;
+  bottom: 20px;
+  /* Đặt khoảng cách từ chân ảnh xuống dưới */
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  z-index: 2;
+  text-align: center;
+  /* Căn giữa nội dung */
+}
+
+.content p {
+  margin: 0 !important;
+  /* Đặt padding của thẻ p là 0 */
+  font-size: 30px;
+}
+
+/* Màu cho thẻ span của trang hiện tại */
+.current-page {
+  color: #dc3545;
+}
